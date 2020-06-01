@@ -1,8 +1,9 @@
 <?php
 
 /**
-* Implements hook_mail().
-*/
+ * Implements hook_mail().
+ * Set mail key
+ */
   function guest_app_otp_login_mail($key, &$message, $params)
   {
     $options = array(
