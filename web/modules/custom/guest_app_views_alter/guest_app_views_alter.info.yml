@@ -1,0 +1,5 @@
+name: guest app views alter
+discription: All views alter of guest app
+package: custom
+type: module
+core: 8.x

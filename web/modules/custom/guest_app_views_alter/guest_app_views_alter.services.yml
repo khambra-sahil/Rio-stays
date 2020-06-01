@@ -1,0 +1,10 @@
+services:
+  guest_app_views_alter.frontOfficeViewsAlter:
+    class: Drupal\guest_app_views_alter\EventSubscriber\FrontOfficeViewsAlterEventSubscriber
+    tags:
+      - { name: 'event_subscriber'}
+
+  guest_app_views_alter.frontOfficeViewsPreAlter:
+    class: Drupal\guest_app_views_alter\EventSubscriber\FrontOfficeViewsPreAlterEventSubscriber
+    tags:
+      - { name: 'event_subscriber'}

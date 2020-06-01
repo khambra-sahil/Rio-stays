@@ -1,0 +1,41 @@
+<?php
+
+namespace Drupal\guest_app_views_alter\EventSubscriber;
+
+use Drupal\Core\Url;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
+use Drupal\hook_event_dispatcher\Event\Views\ViewsQueryAlterEvent;
+
+
+
+/**
+ * Event subscriber class which helps to alter the views Query.
+ */
+class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
+  /**
+   * {@inheritdoc}
+   */
+  public static function getSubscribedEvents() {
+    return [
+      HookEventDispatcherInterface::VIEWS_QUERY_ALTER => 'ViewsQueryAlter'
+    ];
+  }
+
+  /**
+   * Callback function for ViewsQueryAlter.
+   * @param $event
+   */
+  public function ViewsQueryAlter(ViewsQueryAlterEvent $event )
+  {
+    // Getting view object.
+    $view = $event->getView();
+    if($view->current_display == 'wifi_details' || $view->current_display == 'help_line_number' ||$view->current_display == 'hotel_number') {
+      // Getting Query object.
+      $query = $event->getQuery();
+      $current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+      $hotel_id = $current_user->get('field_hotel')->first()->getValue()['target_id'];
+      $query->where[0]['conditions'][0]['value'][':node_field_data_nid'] = $hotel_id;
+    }
+  }
+}

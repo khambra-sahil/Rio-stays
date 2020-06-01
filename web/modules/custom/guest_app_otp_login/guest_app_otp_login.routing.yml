@@ -1,0 +1,15 @@
+otp_request.form:
+  path: '/enter-otp'
+  defaults:
+    _title: 'Request'
+    _form: '\Drupal\guest_app_otp_login\Form\OTPForm'
+  requirements:
+    _permission: 'access content'
+
+otp_username_request.form:
+  path: '/enter-username'
+  defaults:
+    _title: 'Request Username'
+    _form: '\Drupal\guest_app_otp_login\Form\UsernameForm'
+  requirements:
+    _permission: 'access content'

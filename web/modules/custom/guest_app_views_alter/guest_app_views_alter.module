@@ -1,0 +1,30 @@
+<?php
+
+/**
+* Implements hook_views_data_alter().
+*/
+function guest_app_views_alter_views_data_alter(&$data)
+{
+  // Works only if "field_slug" is defined on taxonomy terms.
+  if (isset($data['taxonomy_term__field_url'])) {
+    $field_slug = $data['taxonomy_term__field_slug']['field_slug'];
+
+    // Create a new views argument for reading slug arguments and interpreting
+    // them as taxonomy terms.
+    $data['taxonomy_term__field_url']['field_slug_entity_id'] = [
+      'group' => $field_slug['group'],
+      'title' => t('Custom: Has taxonomy term with slug'),
+      'title short' => t('Slug'),
+      'help' => $field_slug['help'],
+      // We override the argument. This is where we do our tricks!
+      'argument' => [
+        'table' => 'taxonomy_term__field_slug',
+        'field' => 'entity_id',
+        'id' => 'custom_taxonomy_slug',
+        'zero is null' => TRUE,
+      ],
+    ];
+  }
+}
+
+?>

@@ -1,0 +1,5 @@
+name: guest app custom form
+discription: All the forms and form alter related to requests should be written in this module.
+package: custom
+type: module
+core: 8.x

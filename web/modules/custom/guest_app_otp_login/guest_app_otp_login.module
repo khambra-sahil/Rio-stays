@@ -1,0 +1,20 @@
+<?php
+
+/**
+* Implements hook_mail().
+*/
+  function guest_app_otp_login_mail($key, &$message, $params)
+  {
+    $options = array(
+    'langcode' => $message['langcode'],
+    );
+    switch ($key) {
+      case 'send_otp':
+        $message['from'] = \Drupal::config('system.site')->get('mail');
+        $message['subject'] = t('OTP to login: @title', array('@title' => $params['otp_subject']), $options);
+        $message['body'][] = $params['message'];
+        break;
+    }
+  }
+
+?>
