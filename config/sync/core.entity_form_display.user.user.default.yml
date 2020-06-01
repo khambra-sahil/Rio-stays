@@ -1,0 +1,154 @@
+uuid: a2239643-d57f-4ba8-8dfc-d5b5f3bf67ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_check_in_checkout_date
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_from_city
+    - field.field.user.user.field_from_state
+    - field.field.user.user.field_hotel
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_phone_number
+    - field.field.user.user.field_plan_type
+    - field.field.user.user.field_proof
+    - field.field.user.user.field_room_number
+    - field.field.user.user.field_room_type
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - file
+    - image
+    - smart_date
+    - telephone
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_check_in_checkout_date:
+    weight: 12
+    settings:
+      modal: false
+    third_party_settings: {  }
+    type: smartdate_default
+    region: content
+  field_first_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_from_city:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_from_state:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hotel:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_last_name:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone_number:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_plan_type:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_proof:
+    weight: 11
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_room_number:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_room_type:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  language:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true

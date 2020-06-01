@@ -1,0 +1,34 @@
+uuid: 7e5c394a-8800-4e19-9f39-5c196beb33cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_helpline_numbers
+    - node.type.hotel
+    - paragraphs.paragraphs_type.help_line_numbers
+  module:
+    - entity_reference_revisions
+id: node.hotel.field_helpline_numbers
+field_name: field_helpline_numbers
+entity_type: node
+bundle: hotel
+label: 'HELPLINE NUMBERS'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      help_line_numbers: help_line_numbers
+    target_bundles_drag_drop:
+      help_line_numbers:
+        enabled: true
+        weight: 3
+      wifi_information:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

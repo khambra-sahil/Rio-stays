@@ -1,0 +1,45 @@
+uuid: 543ce189-b8f9-4c57-8d72-541496c8970d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.prime_services.field_quantity
+    - field.field.taxonomy_term.prime_services.field_url
+    - taxonomy.vocabulary.prime_services
+  module:
+    - link
+    - text
+id: taxonomy_term.prime_services.default
+targetEntityType: taxonomy_term
+bundle: prime_services
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_quantity:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_url:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

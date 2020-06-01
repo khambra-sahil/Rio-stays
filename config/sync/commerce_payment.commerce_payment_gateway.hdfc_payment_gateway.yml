@@ -1,0 +1,19 @@
+uuid: e2cb5848-fbba-4718-aa0b-ea2eb1533bb1
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_payment_example
+id: hdfc_payment_gateway
+label: 'HDFC payment gateway'
+weight: null
+plugin: example_offsite_redirect
+configuration:
+  redirect_method: post
+  display_label: 'HDFC payment gateway'
+  mode: test
+  payment_method_types:
+    - credit_card
+  collect_billing_information: false
+conditions: {  }
+conditionOperator: AND

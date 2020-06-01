@@ -1,0 +1,95 @@
+uuid: 2a9bfb13-f134-462a-806f-e5c5205850c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.user_history.body
+    - field.field.node.user_history.field_check_in_check_out_details
+    - field.field.node.user_history.field_from_city
+    - field.field.node.user_history.field_from_state
+    - field.field.node.user_history.field_plan_type
+    - field.field.node.user_history.field_room_type
+    - field.field.node.user_history.field_user_history_hotel
+    - field.field.node.user_history.field_user_id
+    - node.type.user_history
+  module:
+    - smart_date
+    - text
+    - user
+id: node.user_history.default
+targetEntityType: node
+bundle: user_history
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_check_in_check_out_details:
+    weight: 105
+    label: above
+    settings:
+      format: default
+      force_chronological: false
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: smartdate_default
+    region: content
+  field_from_city:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_from_state:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_plan_type:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_room_type:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user_history_hotel:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user_id:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

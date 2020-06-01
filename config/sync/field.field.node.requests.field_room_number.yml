@@ -1,0 +1,19 @@
+uuid: 2a7cc2de-ea57-4eef-aa67-73e1ff81a02d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_room_number
+    - node.type.requests
+id: node.requests.field_room_number
+field_name: field_room_number
+entity_type: node
+bundle: requests
+label: 'Room Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

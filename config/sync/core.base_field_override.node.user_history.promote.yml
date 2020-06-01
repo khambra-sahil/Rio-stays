@@ -1,0 +1,22 @@
+uuid: 34d0ede3-f79c-4b4a-a60b-611ccc898e82
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.user_history
+id: node.user_history.promote
+field_name: promote
+entity_type: node
+bundle: user_history
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

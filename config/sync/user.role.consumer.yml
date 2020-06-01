@@ -1,0 +1,10 @@
+uuid: 7d1a712c-afd3-4665-9a9e-72bcba69502a
+langcode: en
+status: true
+dependencies: {  }
+id: consumer
+label: consumer
+weight: 3
+is_admin: null
+permissions:
+  - 'create requests content'

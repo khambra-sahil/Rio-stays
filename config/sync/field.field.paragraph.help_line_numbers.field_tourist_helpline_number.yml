@@ -1,0 +1,21 @@
+uuid: 22315a00-4bb9-41f6-8dc2-a50890e02be1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tourist_helpline_number
+    - paragraphs.paragraphs_type.help_line_numbers
+  module:
+    - telephone
+id: paragraph.help_line_numbers.field_tourist_helpline_number
+field_name: field_tourist_helpline_number
+entity_type: paragraph
+bundle: help_line_numbers
+label: 'TOURIST HELPLINE NUMBER'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

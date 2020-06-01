@@ -1,0 +1,21 @@
+uuid: b8806a7b-69b7-40ff-aa09-383db7ad9adf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_office_number_2
+    - paragraphs.paragraphs_type.hotel_phone_numbers
+  module:
+    - telephone
+id: paragraph.hotel_phone_numbers.field_office_number_2
+field_name: field_office_number_2
+entity_type: paragraph
+bundle: hotel_phone_numbers
+label: 'Office Number-2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

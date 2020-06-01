@@ -1,0 +1,32 @@
+uuid: 02bee1b0-f6e2-40d6-bec5-eab90cfe223a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.food_and_beverages_orders.body
+    - field.field.node.food_and_beverages_orders.field_hotel_order
+    - node.type.food_and_beverages_orders
+  module:
+    - text
+    - user
+id: node.food_and_beverages_orders.teaser
+targetEntityType: node
+bundle: food_and_beverages_orders
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_hotel_order: true

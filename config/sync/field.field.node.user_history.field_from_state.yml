@@ -1,0 +1,19 @@
+uuid: f420a8dc-894e-45cd-be25-bc4c1f52b92d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_from_state
+    - node.type.user_history
+id: node.user_history.field_from_state
+field_name: field_from_state
+entity_type: node
+bundle: user_history
+label: 'From State'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

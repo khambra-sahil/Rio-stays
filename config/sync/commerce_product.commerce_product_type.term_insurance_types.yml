@@ -1,0 +1,12 @@
+uuid: 38b8e381-bf2c-4150-a38c-458aee44e8c6
+langcode: en
+status: true
+dependencies: {  }
+id: term_insurance_types
+label: 'Term insurance types'
+description: ''
+variationType: term_insurance_plan
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

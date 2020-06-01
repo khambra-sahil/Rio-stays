@@ -1,0 +1,37 @@
+uuid: f3692e0d-9f76-493c-9592-c27f3d11367f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hotel_numbers
+    - node.type.hotel
+    - paragraphs.paragraphs_type.hotel_phone_numbers
+  module:
+    - entity_reference_revisions
+id: node.hotel.field_hotel_numbers
+field_name: field_hotel_numbers
+entity_type: node
+bundle: hotel
+label: 'Hotel Numbers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hotel_phone_numbers: hotel_phone_numbers
+    target_bundles_drag_drop:
+      help_line_numbers:
+        weight: 4
+        enabled: false
+      hotel_phone_numbers:
+        enabled: true
+        weight: 5
+      wifi_information:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

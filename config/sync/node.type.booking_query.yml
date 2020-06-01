@@ -1,0 +1,18 @@
+uuid: 8e45027e-7a51-433d-8ed8-d787dc82256d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Booking Query'
+type: booking_query
+description: 'This content type will be used to book queries.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

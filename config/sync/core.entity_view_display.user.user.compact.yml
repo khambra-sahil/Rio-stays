@@ -1,0 +1,54 @@
+uuid: 5a99e4b5-c2c7-4c46-a24c-d3cfe71ba680
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_check_in_checkout_date
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_from_city
+    - field.field.user.user.field_from_state
+    - field.field.user.user.field_hotel
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_phone_number
+    - field.field.user.user.field_plan_type
+    - field.field.user.user.field_proof
+    - field.field.user.user.field_room_number
+    - field.field.user.user.field_room_type
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  field_check_in_checkout_date: true
+  field_first_name: true
+  field_from_city: true
+  field_from_state: true
+  field_hotel: true
+  field_last_name: true
+  field_phone_number: true
+  field_plan_type: true
+  field_proof: true
+  field_room_number: true
+  field_room_type: true
+  member_for: true

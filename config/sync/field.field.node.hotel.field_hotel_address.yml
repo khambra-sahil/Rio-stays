@@ -1,0 +1,40 @@
+uuid: 8139ed5d-336e-4ca4-8a93-529c211835b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hotel_address
+    - node.type.hotel
+  module:
+    - address
+id: node.hotel.field_hotel_address
+field_name: field_hotel_address
+entity_type: node
+bundle: hotel
+label: 'Hotel Address'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    country_code: IN
+    langcode: ''
+    given_name: ''
+    family_name: ''
+    organization: ''
+    address_line1: ''
+    address_line2: ''
+    locality: ''
+    postal_code: ''
+    administrative_area: ''
+    additional_name: null
+    sorting_code: null
+    dependent_locality: null
+default_value_callback: ''
+settings:
+  available_countries:
+    IN: IN
+  langcode_override: ''
+  field_overrides: {  }
+  fields: {  }
+field_type: address

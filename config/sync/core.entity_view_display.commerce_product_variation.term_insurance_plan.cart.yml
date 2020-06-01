@@ -1,0 +1,40 @@
+uuid: ab91a4f3-e101-46ce-8cea-2cc031c3c8fd
+langcode: en
+status: false
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.term_insurance_plan
+    - core.entity_view_mode.commerce_product_variation.cart
+    - field.field.commerce_product_variation.term_insurance_plan.field_product_image
+    - field.field.commerce_product_variation.term_insurance_plan.field_vendor_information
+  module:
+    - commerce_price
+id: commerce_product_variation.term_insurance_plan.cart
+targetEntityType: commerce_product_variation
+bundle: term_insurance_plan
+mode: cart
+content:
+  list_price:
+    label: above
+    type: commerce_price_default
+    weight: -1
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+  price:
+    label: above
+    type: commerce_price_default
+    weight: 0
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+hidden:
+  field_product_image: true
+  field_vendor_information: true
+  product_id: true
+  sku: true
+  title: true

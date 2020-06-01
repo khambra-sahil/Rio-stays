@@ -1,0 +1,21 @@
+uuid: 4b266077-1c8c-4993-9eb8-fba316e0a79e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_number
+    - node.type.booking_query
+  module:
+    - telephone
+id: node.booking_query.field_phone_number
+field_name: field_phone_number
+entity_type: node
+bundle: booking_query
+label: 'Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,32 @@
+uuid: 5411a000-40ec-4df7-af1e-99cfec49e5c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wifi_information.field_wifi_password
+    - field.field.paragraph.wifi_information.field_wifi_username
+    - paragraphs.paragraphs_type.wifi_information
+id: paragraph.wifi_information.default
+targetEntityType: paragraph
+bundle: wifi_information
+mode: default
+content:
+  field_wifi_password:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_wifi_username:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

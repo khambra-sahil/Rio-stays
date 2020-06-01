@@ -1,0 +1,140 @@
+uuid: dd8e5c45-2d0b-4bb2-8375-383ac7f9aadd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_check_in_checkout_date
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_from_city
+    - field.field.user.user.field_from_state
+    - field.field.user.user.field_hotel
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_phone_number
+    - field.field.user.user.field_plan_type
+    - field.field.user.user.field_proof
+    - field.field.user.user.field_room_number
+    - field.field.user.user.field_room_type
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - file
+    - image
+    - smart_date
+    - telephone
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_check_in_checkout_date:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      force_chronological: false
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: smartdate_default
+    region: content
+  field_first_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_from_city:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_from_state:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hotel:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_last_name:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone_number:
+    weight: 7
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_plan_type:
+    weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_proof:
+    weight: 8
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_room_number:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_room_type:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  member_for:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 3
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true

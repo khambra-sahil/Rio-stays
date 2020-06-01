@@ -1,0 +1,22 @@
+uuid: 877744b8-8dd7-444c-a471-ac7cb2c7d046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latitude_and_longitude
+    - node.type.hotel
+  module:
+    - geofield
+id: node.hotel.field_latitude_and_longitude
+field_name: field_latitude_and_longitude
+entity_type: node
+bundle: hotel
+label: 'Latitude and Longitude'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  backend: geofield_backend_default
+field_type: geofield

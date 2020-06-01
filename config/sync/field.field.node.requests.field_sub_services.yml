@@ -1,0 +1,19 @@
+uuid: e220f712-133d-4f39-b5ed-c9bcc48504c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sub_services
+    - node.type.requests
+id: node.requests.field_sub_services
+field_name: field_sub_services
+entity_type: node
+bundle: requests
+label: 'Sub Service'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

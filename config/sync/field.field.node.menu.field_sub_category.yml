@@ -1,0 +1,29 @@
+uuid: 86004e04-8517-4661-b462-c63ce86ff778
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sub_category
+    - node.type.menu
+    - taxonomy.vocabulary.food_and_drinks
+id: node.menu.field_sub_category
+field_name: field_sub_category
+entity_type: node
+bundle: menu
+label: 'Sub Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      food_and_drinks: food_and_drinks
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

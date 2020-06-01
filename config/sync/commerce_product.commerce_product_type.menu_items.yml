@@ -1,0 +1,12 @@
+uuid: b8b21781-c11d-4609-a5d8-a0636bf302ec
+langcode: en
+status: true
+dependencies: {  }
+id: menu_items
+label: 'Menu Items'
+description: ''
+variationType: menu_item
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

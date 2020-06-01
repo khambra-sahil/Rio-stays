@@ -1,0 +1,48 @@
+uuid: 84c5417d-bd45-4891-b19f-19ce93f1a4f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hotel.body
+    - field.field.node.hotel.field_helpline_numbers
+    - field.field.node.hotel.field_hotel_address
+    - field.field.node.hotel.field_hotel_numbers
+    - field.field.node.hotel.field_hotel_pictures
+    - field.field.node.hotel.field_latitude_and_longitude
+    - field.field.node.hotel.field_local_attraction
+    - field.field.node.hotel.field_number_of_rooms
+    - field.field.node.hotel.field_prime_services
+    - field.field.node.hotel.field_wifi_details
+    - node.type.hotel
+  module:
+    - text
+    - user
+id: node.hotel.teaser
+targetEntityType: node
+bundle: hotel
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_helpline_numbers: true
+  field_hotel_address: true
+  field_hotel_numbers: true
+  field_hotel_pictures: true
+  field_latitude_and_longitude: true
+  field_local_attraction: true
+  field_number_of_rooms: true
+  field_prime_services: true
+  field_wifi_details: true

@@ -1,0 +1,21 @@
+uuid: 4a604e82-7f8d-4d52-a488-c513c8649a43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hotel_order
+    - node.type.food_and_beverages_orders
+id: node.food_and_beverages_orders.field_hotel_order
+field_name: field_hotel_order
+entity_type: node
+bundle: food_and_beverages_orders
+label: Hotel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings: {  }
+field_type: entity_reference

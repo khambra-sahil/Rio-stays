@@ -1,0 +1,19 @@
+uuid: d2dec494-315e-417a-a9f1-567c6dc445d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - smart_date
+    - user
+id: user.field_check_in_checkout_date
+field_name: field_check_in_checkout_date
+entity_type: user
+type: smartdate
+settings: {  }
+module: smart_date
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

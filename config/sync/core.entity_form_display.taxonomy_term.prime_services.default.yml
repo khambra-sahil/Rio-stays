@@ -1,0 +1,62 @@
+uuid: 5823bdb2-3edf-4906-87a8-bb548f96771b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.prime_services.field_quantity
+    - field.field.taxonomy_term.prime_services.field_url
+    - taxonomy.vocabulary.prime_services
+  module:
+    - link
+    - path
+    - text
+id: taxonomy_term.prime_services.default
+targetEntityType: taxonomy_term
+bundle: prime_services
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_quantity:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_url:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+hidden: {  }

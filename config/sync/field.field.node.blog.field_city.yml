@@ -1,0 +1,29 @@
+uuid: 9e9dc9e8-66d3-4f70-aab3-6d16695e3f2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.blog
+    - taxonomy.vocabulary.blog_city_tag
+id: node.blog.field_city
+field_name: field_city
+entity_type: node
+bundle: blog
+label: City
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      blog_city_tag: blog_city_tag
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

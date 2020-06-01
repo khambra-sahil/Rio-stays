@@ -1,0 +1,28 @@
+uuid: 1d68a985-5369-48a9-9e08-e84e0804fb74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_local_attraction
+    - node.type.hotel
+    - node.type.local_attractions
+id: node.hotel.field_local_attraction
+field_name: field_local_attraction
+entity_type: node
+bundle: hotel
+label: 'Local Attraction'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      local_attractions: local_attractions
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 78ef32ab-4efc-4884-a484-4f298e5071b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_booking_query_hotel
+field_name: field_booking_query_hotel
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,46 @@
+uuid: 65f2bde1-14e4-4673-9a6b-556cd04ebe04
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.booking_query.body
+    - field.field.node.booking_query.field_booking_query_hotel
+    - field.field.node.booking_query.field_event_date
+    - field.field.node.booking_query.field_event_types
+    - field.field.node.booking_query.field_full_name
+    - field.field.node.booking_query.field_no_of_persons
+    - field.field.node.booking_query.field_others
+    - field.field.node.booking_query.field_phone_number
+    - field.field.node.booking_query.field_user
+    - node.type.booking_query
+  module:
+    - text
+    - user
+id: node.booking_query.teaser
+targetEntityType: node
+bundle: booking_query
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_booking_query_hotel: true
+  field_event_date: true
+  field_event_types: true
+  field_full_name: true
+  field_no_of_persons: true
+  field_others: true
+  field_phone_number: true
+  field_user: true

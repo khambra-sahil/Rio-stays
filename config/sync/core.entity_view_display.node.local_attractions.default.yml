@@ -1,0 +1,28 @@
+uuid: a6df0b98-6ba6-4697-be5d-5ea5f0247e35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.local_attractions.body
+    - node.type.local_attractions
+  module:
+    - text
+    - user
+id: node.local_attractions.default
+targetEntityType: node
+bundle: local_attractions
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

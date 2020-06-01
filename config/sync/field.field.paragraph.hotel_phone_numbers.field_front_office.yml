@@ -1,0 +1,21 @@
+uuid: 3ad9e0a9-8fb9-4639-8bac-cb00a9eafaeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_front_office
+    - paragraphs.paragraphs_type.hotel_phone_numbers
+  module:
+    - telephone
+id: paragraph.hotel_phone_numbers.field_front_office
+field_name: field_front_office
+entity_type: paragraph
+bundle: hotel_phone_numbers
+label: 'Front Office'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

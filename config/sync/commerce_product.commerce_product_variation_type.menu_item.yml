@@ -1,0 +1,10 @@
+uuid: 55f3ac8b-672f-4545-ac00-32a5c5223f23
+langcode: en
+status: true
+dependencies: {  }
+id: menu_item
+label: 'Menu Item'
+orderItemType: default
+generateTitle: false
+traits: {  }
+locked: false

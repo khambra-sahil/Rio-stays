@@ -1,0 +1,21 @@
+uuid: 3fdf22ef-ae46-4460-afe6-6287609bf4f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fire_helpline_number
+    - paragraphs.paragraphs_type.help_line_numbers
+  module:
+    - telephone
+id: paragraph.help_line_numbers.field_fire_helpline_number
+field_name: field_fire_helpline_number
+entity_type: paragraph
+bundle: help_line_numbers
+label: 'FIRE HELPLINE NUMBER'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

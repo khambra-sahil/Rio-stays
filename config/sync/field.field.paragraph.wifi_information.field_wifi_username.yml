@@ -1,0 +1,19 @@
+uuid: 4709bcc1-38fa-4135-88f4-dbf332286ee3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_wifi_username
+    - paragraphs.paragraphs_type.wifi_information
+id: paragraph.wifi_information.field_wifi_username
+field_name: field_wifi_username
+entity_type: paragraph
+bundle: wifi_information
+label: 'WIFI Username'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

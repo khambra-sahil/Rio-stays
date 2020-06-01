@@ -1,0 +1,8 @@
+uuid: e7b35112-b212-4fa4-9914-e716d8cff6fd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Food and Drinks'
+vid: food_and_drinks
+description: ''
+weight: 0

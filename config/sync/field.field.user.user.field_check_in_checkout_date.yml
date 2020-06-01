@@ -1,0 +1,26 @@
+uuid: d623679c-2587-4f5c-a5da-92f4798faaaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_check_in_checkout_date
+  module:
+    - smart_date
+    - user
+id: user.user.field_check_in_checkout_date
+field_name: field_check_in_checkout_date
+entity_type: user
+bundle: user
+label: 'Check in/ checkout date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: ''
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_duration: 60
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

@@ -1,0 +1,14 @@
+uuid: 2ed79533-e179-4375-a4ca-6ac806fbbea2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.bloger
+  module:
+    - user
+id: user_add_role_action.bloger
+label: 'Add the bloger role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: bloger

@@ -1,0 +1,14 @@
+uuid: b2835a94-64c0-4175-a4ce-a58e0e9e8655
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.house_keeping
+  module:
+    - user
+id: user_remove_role_action.house_keeping
+label: 'Remove the House Keeping role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: house_keeping

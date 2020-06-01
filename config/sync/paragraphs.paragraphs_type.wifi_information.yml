@@ -1,0 +1,10 @@
+uuid: b5d096a4-0715-4523-bbbf-9ba41b8abbf6
+langcode: en
+status: true
+dependencies: {  }
+id: wifi_information
+label: 'WIFI Information'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

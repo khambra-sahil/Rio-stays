@@ -1,0 +1,26 @@
+uuid: 8e9ca618-1cb6-4df2-8e39-0d3520cd14f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_check_in_check_out_details
+    - node.type.user_history
+  module:
+    - smart_date
+id: node.user_history.field_check_in_check_out_details
+field_name: field_check_in_check_out_details
+entity_type: node
+bundle: user_history
+label: 'Check in/Check out details'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: ''
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_duration: 60
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

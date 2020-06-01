@@ -1,0 +1,19 @@
+uuid: 77cf6853-121d-45ff-aaa7-6db3721cf585
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - telephone
+id: paragraph.field_senior_citizen_helpline_nu
+field_name: field_senior_citizen_helpline_nu
+entity_type: paragraph
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

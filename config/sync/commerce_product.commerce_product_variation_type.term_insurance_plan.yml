@@ -1,0 +1,10 @@
+uuid: 7af0ffa4-da2b-4bef-8cf3-47063f251821
+langcode: en
+status: true
+dependencies: {  }
+id: term_insurance_plan
+label: 'Term insurance plan'
+orderItemType: default
+generateTitle: true
+traits: {  }
+locked: false

@@ -1,0 +1,8 @@
+uuid: fb348cae-95e5-48da-b515-cd27bd9f5a2b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Prime Services'
+vid: prime_services
+description: ''
+weight: 0

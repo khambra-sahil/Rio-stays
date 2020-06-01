@@ -1,0 +1,19 @@
+uuid: b6b4f4ca-fcfa-4a22-a886-49c2a0133720
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_others
+    - node.type.booking_query
+id: node.booking_query.field_others
+field_name: field_others
+entity_type: node
+bundle: booking_query
+label: Others
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

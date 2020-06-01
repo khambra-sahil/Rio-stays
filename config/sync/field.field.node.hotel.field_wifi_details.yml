@@ -1,0 +1,34 @@
+uuid: 50d27f24-91ac-445f-acb0-8491f78be639
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wifi_details
+    - node.type.hotel
+    - paragraphs.paragraphs_type.wifi_information
+  module:
+    - entity_reference_revisions
+id: node.hotel.field_wifi_details
+field_name: field_wifi_details
+entity_type: node
+bundle: hotel
+label: 'WIFI Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      wifi_information: wifi_information
+    target_bundles_drag_drop:
+      help_line_numbers:
+        weight: 3
+        enabled: false
+      wifi_information:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions

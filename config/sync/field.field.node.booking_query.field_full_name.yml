@@ -1,0 +1,19 @@
+uuid: 5aa99259-69e8-4371-a6b8-ac297b408760
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_full_name
+    - node.type.booking_query
+id: node.booking_query.field_full_name
+field_name: field_full_name
+entity_type: node
+bundle: booking_query
+label: 'Full Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

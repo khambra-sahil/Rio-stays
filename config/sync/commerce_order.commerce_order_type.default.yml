@@ -1,0 +1,16 @@
+uuid: 2c193bcc-55e7-49bd-978f-6ff2f0e02f46
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bROz7kd1J83kDf06qdZztYFSezi6UrfwftyJo53rNt4
+label: Default
+id: default
+workflow: order_default
+numberPattern: order_default
+refresh_mode: customer
+refresh_frequency: 300
+sendReceipt: true
+receiptBcc: ''
+traits: {  }
+locked: false

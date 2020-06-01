@@ -1,0 +1,18 @@
+uuid: b2606561-69e8-4cc6-a108-784301c36fa6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Hotel
+type: hotel
+description: 'This Content type will store the information about the hotel'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

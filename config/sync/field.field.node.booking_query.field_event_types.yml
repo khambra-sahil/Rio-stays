@@ -1,0 +1,29 @@
+uuid: dd391438-2562-4567-a4a4-bf13f193f7e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_types
+    - node.type.booking_query
+    - taxonomy.vocabulary.event_type
+id: node.booking_query.field_event_types
+field_name: field_event_types
+entity_type: node
+bundle: booking_query
+label: 'Event Types'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_type: event_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

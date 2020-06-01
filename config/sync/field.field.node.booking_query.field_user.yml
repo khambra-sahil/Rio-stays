@@ -1,0 +1,34 @@
+uuid: 857ce5ec-75d4-4a6d-ba7e-65ab92007b12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user
+    - node.type.booking_query
+id: node.booking_query.field_user
+field_name: field_user
+entity_type: node
+bundle: booking_query
+label: User
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: role
+      role:
+        consumer: consumer
+        administrator: '0'
+        house_keeping: '0'
+        bloger: '0'
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

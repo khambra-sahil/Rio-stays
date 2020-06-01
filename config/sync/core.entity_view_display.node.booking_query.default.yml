@@ -1,0 +1,102 @@
+uuid: 4568d3e6-cc47-462c-9cee-65d385e1750b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.booking_query.body
+    - field.field.node.booking_query.field_booking_query_hotel
+    - field.field.node.booking_query.field_event_date
+    - field.field.node.booking_query.field_event_types
+    - field.field.node.booking_query.field_full_name
+    - field.field.node.booking_query.field_no_of_persons
+    - field.field.node.booking_query.field_others
+    - field.field.node.booking_query.field_phone_number
+    - field.field.node.booking_query.field_user
+    - node.type.booking_query
+  module:
+    - datetime
+    - text
+    - user
+id: node.booking_query.default
+targetEntityType: node
+bundle: booking_query
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_booking_query_hotel:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_date:
+    weight: 9
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_event_types:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_full_name:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_no_of_persons:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_others:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone_number:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_user:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

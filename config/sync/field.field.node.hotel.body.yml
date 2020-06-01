@@ -1,0 +1,23 @@
+uuid: 337ea7e5-d2c4-4a3a-8828-3213fd882b3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.hotel
+  module:
+    - text
+id: node.hotel.body
+field_name: body
+entity_type: node
+bundle: hotel
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

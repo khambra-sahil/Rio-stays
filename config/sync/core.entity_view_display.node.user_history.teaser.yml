@@ -1,0 +1,44 @@
+uuid: 4ffa0014-4eb9-48a6-92c9-8444df3440cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.user_history.body
+    - field.field.node.user_history.field_check_in_check_out_details
+    - field.field.node.user_history.field_from_city
+    - field.field.node.user_history.field_from_state
+    - field.field.node.user_history.field_plan_type
+    - field.field.node.user_history.field_room_type
+    - field.field.node.user_history.field_user_history_hotel
+    - field.field.node.user_history.field_user_id
+    - node.type.user_history
+  module:
+    - text
+    - user
+id: node.user_history.teaser
+targetEntityType: node
+bundle: user_history
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_check_in_check_out_details: true
+  field_from_city: true
+  field_from_state: true
+  field_plan_type: true
+  field_room_type: true
+  field_user_history_hotel: true
+  field_user_id: true

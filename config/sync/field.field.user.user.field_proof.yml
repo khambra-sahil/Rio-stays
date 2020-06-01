@@ -1,0 +1,27 @@
+uuid: c3b0b318-9b61-4f7a-b15c-70811bad746f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_proof
+  module:
+    - file
+    - user
+id: user.user.field_proof
+field_name: field_proof
+entity_type: user
+bundle: user
+label: Proof
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf doc docx jpeg png jpg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

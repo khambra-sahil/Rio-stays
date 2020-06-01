@@ -1,0 +1,21 @@
+uuid: 5778c187-f669-4af9-83dc-3a9ab62370c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_vendor_information
+field_name: field_vendor_information
+entity_type: commerce_product_variation
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

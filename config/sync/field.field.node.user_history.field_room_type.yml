@@ -1,0 +1,29 @@
+uuid: 7bc3273b-ec72-497b-b59f-ae38f5af8dc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_room_type
+    - node.type.user_history
+    - taxonomy.vocabulary.room_types
+id: node.user_history.field_room_type
+field_name: field_room_type
+entity_type: node
+bundle: user_history
+label: 'Room Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      room_types: room_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

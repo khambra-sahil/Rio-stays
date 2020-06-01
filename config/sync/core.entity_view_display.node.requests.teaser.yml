@@ -1,0 +1,42 @@
+uuid: 3fda5707-1b6e-4b64-84d7-957125a67517
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.requests.body
+    - field.field.node.requests.field_hotel
+    - field.field.node.requests.field_quantity
+    - field.field.node.requests.field_request
+    - field.field.node.requests.field_room_number
+    - field.field.node.requests.field_service_type
+    - field.field.node.requests.field_sub_services
+    - node.type.requests
+  module:
+    - text
+    - user
+id: node.requests.teaser
+targetEntityType: node
+bundle: requests
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_hotel: true
+  field_quantity: true
+  field_request: true
+  field_room_number: true
+  field_service_type: true
+  field_sub_services: true

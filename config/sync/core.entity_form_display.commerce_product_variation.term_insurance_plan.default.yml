@@ -1,0 +1,63 @@
+uuid: e368f3c5-be30-410a-934c-ba75aeed0a92
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.term_insurance_plan
+    - field.field.commerce_product_variation.term_insurance_plan.field_product_image
+    - field.field.commerce_product_variation.term_insurance_plan.field_vendor_information
+    - image.style.thumbnail
+  module:
+    - commerce_price
+    - image
+id: commerce_product_variation.term_insurance_plan.default
+targetEntityType: commerce_product_variation
+bundle: term_insurance_plan
+mode: default
+content:
+  field_product_image:
+    weight: 92
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_vendor_information:
+    weight: 93
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  list_price:
+    type: commerce_list_price
+    weight: -1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: commerce_price_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 90
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

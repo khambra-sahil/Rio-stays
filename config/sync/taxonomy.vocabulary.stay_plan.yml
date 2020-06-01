@@ -1,0 +1,8 @@
+uuid: f26de582-cc1c-469a-bc31-2a4c2306cfe0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Stay Plan'
+vid: stay_plan
+description: ''
+weight: 0

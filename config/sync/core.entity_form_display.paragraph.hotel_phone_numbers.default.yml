@@ -1,0 +1,40 @@
+uuid: fa188601-d44e-4034-825a-e77047230b66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hotel_phone_numbers.field_front_office
+    - field.field.paragraph.hotel_phone_numbers.field_office_number
+    - field.field.paragraph.hotel_phone_numbers.field_office_number_2
+    - paragraphs.paragraphs_type.hotel_phone_numbers
+  module:
+    - telephone
+id: paragraph.hotel_phone_numbers.default
+targetEntityType: paragraph
+bundle: hotel_phone_numbers
+mode: default
+content:
+  field_front_office:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_office_number:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_office_number_2:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+hidden:
+  created: true
+  status: true

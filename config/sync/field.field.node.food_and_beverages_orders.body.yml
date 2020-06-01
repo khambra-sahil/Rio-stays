@@ -1,0 +1,23 @@
+uuid: 38ebfa9d-eb83-4940-b401-764f9e24756d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.food_and_beverages_orders
+  module:
+    - text
+id: node.food_and_beverages_orders.body
+field_name: body
+entity_type: node
+bundle: food_and_beverages_orders
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

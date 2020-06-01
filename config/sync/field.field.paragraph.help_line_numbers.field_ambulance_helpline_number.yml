@@ -1,0 +1,21 @@
+uuid: 89c8643f-b9f5-456c-b060-b64d1190781c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ambulance_helpline_number
+    - paragraphs.paragraphs_type.help_line_numbers
+  module:
+    - telephone
+id: paragraph.help_line_numbers.field_ambulance_helpline_number
+field_name: field_ambulance_helpline_number
+entity_type: paragraph
+bundle: help_line_numbers
+label: 'AMBULANCE HELPLINE NUMBER'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,19 @@
+uuid: ac42fc80-4676-4362-ad88-2cfabee7993a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - telephone
+id: paragraph.field_tourist_helpline_number
+field_name: field_tourist_helpline_number
+entity_type: paragraph
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

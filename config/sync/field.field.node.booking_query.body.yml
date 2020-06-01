@@ -1,0 +1,23 @@
+uuid: 4560549a-3298-4c5d-b14c-2d39a12a3d2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.booking_query
+  module:
+    - text
+id: node.booking_query.body
+field_name: body
+entity_type: node
+bundle: booking_query
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

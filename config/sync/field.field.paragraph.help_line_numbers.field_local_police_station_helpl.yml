@@ -1,0 +1,21 @@
+uuid: e53ae4e2-e7b3-406f-9f58-923dc1276415
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_local_police_station_helpl
+    - paragraphs.paragraphs_type.help_line_numbers
+  module:
+    - telephone
+id: paragraph.help_line_numbers.field_local_police_station_helpl
+field_name: field_local_police_station_helpl
+entity_type: paragraph
+bundle: help_line_numbers
+label: 'LOCAL POLICE STATION HELPLINE NUMBER'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,8 @@
+uuid: 2e2be339-027d-462f-a3c9-751769c72521
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Type'
+vid: event_type
+description: 'Event type for booking query'
+weight: 0

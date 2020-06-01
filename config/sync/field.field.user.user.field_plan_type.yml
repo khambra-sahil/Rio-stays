@@ -1,0 +1,30 @@
+uuid: 27bfe35c-bce3-4c67-a883-3cd88be942b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_plan_type
+    - taxonomy.vocabulary.stay_plan
+  module:
+    - user
+id: user.user.field_plan_type
+field_name: field_plan_type
+entity_type: user
+bundle: user
+label: 'Plan Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      stay_plan: stay_plan
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

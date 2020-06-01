@@ -1,0 +1,28 @@
+uuid: 43eb7fab-d675-4bf9-9a8b-ea77a21e993b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_booking_query_hotel
+    - node.type.booking_query
+    - node.type.hotel
+id: node.booking_query.field_booking_query_hotel
+field_name: field_booking_query_hotel
+entity_type: node
+bundle: booking_query
+label: Hotel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hotel: hotel
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

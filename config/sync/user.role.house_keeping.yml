@@ -1,0 +1,10 @@
+uuid: 3da99462-9082-4907-a981-57be4f239b6a
+langcode: en
+status: true
+dependencies: {  }
+id: house_keeping
+label: 'House Keeping'
+weight: 4
+is_admin: null
+permissions:
+  - 'create requests content'

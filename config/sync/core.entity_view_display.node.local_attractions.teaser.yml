@@ -1,0 +1,30 @@
+uuid: 0a68b61e-cc50-4161-a8d1-c7168b3e4379
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.local_attractions.body
+    - node.type.local_attractions
+  module:
+    - text
+    - user
+id: node.local_attractions.teaser
+targetEntityType: node
+bundle: local_attractions
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

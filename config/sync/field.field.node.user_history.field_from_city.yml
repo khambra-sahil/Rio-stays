@@ -1,0 +1,19 @@
+uuid: 2fc43d3a-9916-4b2c-adb2-b9990e65f6b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_from_city
+    - node.type.user_history
+id: node.user_history.field_from_city
+field_name: field_from_city
+entity_type: node
+bundle: user_history
+label: 'From City'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

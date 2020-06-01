@@ -1,0 +1,8 @@
+uuid: fd86c067-5b88-49a9-9106-cb565b12a7ea
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog City Tag'
+vid: blog_city_tag
+description: ''
+weight: 0

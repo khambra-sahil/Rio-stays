@@ -1,0 +1,23 @@
+uuid: 7b0fa1f6-3951-4824-a45d-08d71f028f2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.menu_items
+    - field.storage.commerce_product.body
+  module:
+    - text
+id: commerce_product.menu_items.body
+field_name: body
+entity_type: commerce_product
+bundle: menu_items
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

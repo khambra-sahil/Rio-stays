@@ -1,0 +1,10 @@
+uuid: 66d981b3-715c-42e1-8ecf-c912abf4641a
+langcode: en
+status: true
+dependencies: {  }
+id: hotel_phone_numbers
+label: 'Hotel Phone Numbers'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

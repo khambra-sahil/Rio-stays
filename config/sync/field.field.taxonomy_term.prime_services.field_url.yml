@@ -1,0 +1,23 @@
+uuid: a2d5fafd-ea4d-40ce-8d12-ec2fb170c2ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_url
+    - taxonomy.vocabulary.prime_services
+  module:
+    - link
+id: taxonomy_term.prime_services.field_url
+field_name: field_url
+entity_type: taxonomy_term
+bundle: prime_services
+label: URL
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 0
+field_type: link

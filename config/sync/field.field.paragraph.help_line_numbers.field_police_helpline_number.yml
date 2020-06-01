@@ -1,0 +1,21 @@
+uuid: dc969365-d08b-4578-b6dd-8a7b267bd7e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_police_helpline_number
+    - paragraphs.paragraphs_type.help_line_numbers
+  module:
+    - telephone
+id: paragraph.help_line_numbers.field_police_helpline_number
+field_name: field_police_helpline_number
+entity_type: paragraph
+bundle: help_line_numbers
+label: 'POLICE HELPLINE NUMBER'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

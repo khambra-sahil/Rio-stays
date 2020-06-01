@@ -1,0 +1,80 @@
+uuid: 215ca0b8-fb3f-4278-aef9-74b62b45ae4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.help_line_numbers.field_ambulance_helpline_number
+    - field.field.paragraph.help_line_numbers.field_fire_helpline_number
+    - field.field.paragraph.help_line_numbers.field_local_police_station_helpl
+    - field.field.paragraph.help_line_numbers.field_national_emergency_number
+    - field.field.paragraph.help_line_numbers.field_police_helpline_number
+    - field.field.paragraph.help_line_numbers.field_senior_citizen_helpline_nu
+    - field.field.paragraph.help_line_numbers.field_tourist_helpline_number
+    - field.field.paragraph.help_line_numbers.field_women_helpline_number
+    - paragraphs.paragraphs_type.help_line_numbers
+  module:
+    - telephone
+id: paragraph.help_line_numbers.default
+targetEntityType: paragraph
+bundle: help_line_numbers
+mode: default
+content:
+  field_ambulance_helpline_number:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_fire_helpline_number:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_local_police_station_helpl:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_national_emergency_number:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_police_helpline_number:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_senior_citizen_helpline_nu:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_tourist_helpline_number:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_women_helpline_number:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+hidden:
+  created: true
+  status: true

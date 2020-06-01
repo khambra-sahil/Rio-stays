@@ -1,0 +1,23 @@
+uuid: fc71c40f-dfb0-4150-bfec-52bc174ccb58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_rooms
+    - node.type.hotel
+id: node.hotel.field_number_of_rooms
+field_name: field_number_of_rooms
+entity_type: node
+bundle: hotel
+label: 'Number of Rooms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

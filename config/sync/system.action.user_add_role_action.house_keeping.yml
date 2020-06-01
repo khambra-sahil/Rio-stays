@@ -1,0 +1,14 @@
+uuid: 113a14f5-47bf-4b6d-adf1-32024839947b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.house_keeping
+  module:
+    - user
+id: user_add_role_action.house_keeping
+label: 'Add the House Keeping role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: house_keeping

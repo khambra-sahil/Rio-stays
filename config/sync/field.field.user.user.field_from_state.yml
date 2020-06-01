@@ -1,0 +1,20 @@
+uuid: 54a0e634-cd5a-42e9-933c-a38457d0b076
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_from_state
+  module:
+    - user
+id: user.user.field_from_state
+field_name: field_from_state
+entity_type: user
+bundle: user
+label: 'From state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

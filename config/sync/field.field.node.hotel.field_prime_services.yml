@@ -1,0 +1,29 @@
+uuid: b9830173-f0b7-4d3d-904c-93d578316297
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prime_services
+    - node.type.hotel
+    - taxonomy.vocabulary.prime_services
+id: node.hotel.field_prime_services
+field_name: field_prime_services
+entity_type: node
+bundle: hotel
+label: 'Prime Services'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      prime_services: prime_services
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

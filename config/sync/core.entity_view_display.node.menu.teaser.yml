@@ -1,0 +1,38 @@
+uuid: 056d5889-85c7-42ac-940b-b1b6b8748bf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.menu.body
+    - field.field.node.menu.field_category
+    - field.field.node.menu.field_menu_hotel
+    - field.field.node.menu.field_price
+    - field.field.node.menu.field_sub_category
+    - node.type.menu
+  module:
+    - text
+    - user
+id: node.menu.teaser
+targetEntityType: node
+bundle: menu
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_category: true
+  field_menu_hotel: true
+  field_price: true
+  field_sub_category: true
