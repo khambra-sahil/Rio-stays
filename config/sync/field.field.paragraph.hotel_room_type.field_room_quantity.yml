@@ -1,0 +1,23 @@
+uuid: 21244e87-b81c-4556-b0c7-c9209355a059
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_room_quantity
+    - paragraphs.paragraphs_type.hotel_room_type
+id: paragraph.hotel_room_type.field_room_quantity
+field_name: field_room_quantity
+entity_type: paragraph
+bundle: hotel_room_type
+label: 'Room Quantity'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

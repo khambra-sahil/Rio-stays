@@ -9,8 +9,10 @@ dependencies:
     - field.field.node.requests.field_quantity
     - field.field.node.requests.field_request
     - field.field.node.requests.field_room_number
+    - field.field.node.requests.field_service_date_time
     - field.field.node.requests.field_service_type
     - field.field.node.requests.field_sub_services
+    - field.field.node.requests.field_user_comments
     - node.type.requests
   module:
     - text
@@ -38,5 +40,7 @@ hidden:
   field_quantity: true
   field_request: true
   field_room_number: true
+  field_service_date_time: true
   field_service_type: true
   field_sub_services: true
+  field_user_comments: true

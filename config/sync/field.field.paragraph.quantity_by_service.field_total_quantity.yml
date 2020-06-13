@@ -1,0 +1,23 @@
+uuid: 962d4dc9-f9b9-469e-ae31-cc6295e5ca15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_total_quantity
+    - paragraphs.paragraphs_type.quantity_by_service
+id: paragraph.quantity_by_service.field_total_quantity
+field_name: field_total_quantity
+entity_type: paragraph
+bundle: quantity_by_service
+label: 'Total Quantity'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

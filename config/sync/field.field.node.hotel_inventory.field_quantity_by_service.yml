@@ -1,0 +1,40 @@
+uuid: 81965486-377e-4d4d-9aae-7a09f1863746
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_quantity_by_service
+    - node.type.hotel_inventory
+    - paragraphs.paragraphs_type.quantity_by_service
+  module:
+    - entity_reference_revisions
+id: node.hotel_inventory.field_quantity_by_service
+field_name: field_quantity_by_service
+entity_type: node
+bundle: hotel_inventory
+label: 'Quantity By Service'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      quantity_by_service: quantity_by_service
+    target_bundles_drag_drop:
+      help_line_numbers:
+        weight: 5
+        enabled: false
+      hotel_phone_numbers:
+        weight: 6
+        enabled: false
+      quantity_by_service:
+        enabled: true
+        weight: 7
+      wifi_information:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

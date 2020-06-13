@@ -34,6 +34,7 @@
         "drupal/geofield": "^1.13",
         "drupal/geolocation": "^3.0",
         "drupal/hook_event_dispatcher": "^1.29",
+        "drupal/menu_item_role_access": "^2.0",
         "drupal/mobile_number": "^1.0@alpha",
         "drupal/otp_login": "^1.2",
         "drupal/paragraphs": "^1.11",

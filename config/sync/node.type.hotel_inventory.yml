@@ -1,0 +1,17 @@
+uuid: 906026bf-8f37-492c-8e52-b37a19e21a0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Hotel Inventory'
+type: hotel_inventory
+description: 'To manage inventory'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

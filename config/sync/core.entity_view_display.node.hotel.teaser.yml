@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.hotel.body
     - field.field.node.hotel.field_helpline_numbers
+    - field.field.node.hotel.field_hotel_activities
     - field.field.node.hotel.field_hotel_address
     - field.field.node.hotel.field_hotel_numbers
     - field.field.node.hotel.field_hotel_pictures
@@ -38,6 +39,7 @@ content:
     region: content
 hidden:
   field_helpline_numbers: true
+  field_hotel_activities: true
   field_hotel_address: true
   field_hotel_numbers: true
   field_hotel_pictures: true

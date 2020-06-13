@@ -51,6 +51,7 @@ module:
   inline_entity_form: 0
   kint: 0
   link: 0
+  menu_item_role_access: 0
   menu_ui: 0
   node: 0
   options: 0

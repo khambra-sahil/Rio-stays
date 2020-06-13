@@ -1,0 +1,41 @@
+uuid: 17e63afb-7e8f-4590-8c2a-4ccef3a65fd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quantity_by_service.field_remaining_qty
+    - field.field.paragraph.quantity_by_service.field_service_name
+    - field.field.paragraph.quantity_by_service.field_total_quantity
+    - paragraphs.paragraphs_type.quantity_by_service
+id: paragraph.quantity_by_service.default
+targetEntityType: paragraph
+bundle: quantity_by_service
+mode: default
+content:
+  field_remaining_qty:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_service_name:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_total_quantity:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true

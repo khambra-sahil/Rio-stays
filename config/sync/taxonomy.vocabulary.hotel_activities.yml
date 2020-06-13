@@ -1,0 +1,8 @@
+uuid: f75b5192-e8f3-44b1-9b87-72e0784882da
+langcode: en
+status: true
+dependencies: {  }
+name: 'Hotel Activities'
+vid: hotel_activities
+description: ''
+weight: 0

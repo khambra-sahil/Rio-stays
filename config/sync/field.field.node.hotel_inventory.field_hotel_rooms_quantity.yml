@@ -1,0 +1,43 @@
+uuid: 72bd2836-b662-4a8a-8ffe-1de1c09ae980
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hotel_rooms_quantity
+    - node.type.hotel_inventory
+    - paragraphs.paragraphs_type.hotel_room_type
+  module:
+    - entity_reference_revisions
+id: node.hotel_inventory.field_hotel_rooms_quantity
+field_name: field_hotel_rooms_quantity
+entity_type: node
+bundle: hotel_inventory
+label: 'Hotel Rooms Quantity'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hotel_room_type: hotel_room_type
+    target_bundles_drag_drop:
+      help_line_numbers:
+        weight: 6
+        enabled: false
+      hotel_phone_numbers:
+        weight: 7
+        enabled: false
+      hotel_room_type:
+        enabled: true
+        weight: 8
+      quantity_by_service:
+        weight: 9
+        enabled: false
+      wifi_information:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

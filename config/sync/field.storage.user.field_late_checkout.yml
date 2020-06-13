@@ -1,0 +1,18 @@
+uuid: 0a55da8b-e1fa-42e6-80a1-83b1aae26646
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_late_checkout
+field_name: field_late_checkout
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

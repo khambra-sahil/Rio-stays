@@ -1,0 +1,22 @@
+uuid: c86cb361-2e48-4156-9f3f-85102325ac54
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hotel_inventory
+id: node.hotel_inventory.promote
+field_name: promote
+entity_type: node
+bundle: hotel_inventory
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

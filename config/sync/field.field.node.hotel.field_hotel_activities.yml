@@ -1,0 +1,29 @@
+uuid: 3edc133c-c112-4e3f-a5c3-91bd7f2de747
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hotel_activities
+    - node.type.hotel
+    - taxonomy.vocabulary.hotel_activities
+id: node.hotel.field_hotel_activities
+field_name: field_hotel_activities
+entity_type: node
+bundle: hotel
+label: 'Hotel Activities'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hotel_activities: hotel_activities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
