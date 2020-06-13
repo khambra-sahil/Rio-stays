@@ -1,0 +1,14 @@
+uuid: 03a1bfd4-f47c-4038-804b-9875dfafddde
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.front_office
+  module:
+    - user
+id: user_add_role_action.front_office
+label: 'Add the Front Office role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: front_office

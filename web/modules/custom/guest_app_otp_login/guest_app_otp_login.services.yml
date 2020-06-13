@@ -1,5 +1,0 @@
-services:
-  guest_app_otp_login.loginAlter:
-    class: Drupal\guest_app_otp_login\EventSubscriber\LoginFormAlterEventSubscriber
-    tags:
-      - { name: 'event_subscriber'}
