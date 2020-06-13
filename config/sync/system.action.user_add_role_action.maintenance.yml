@@ -1,0 +1,14 @@
+uuid: 2e2b8af9-9202-48fb-9e50-a6d37d463914
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.maintenance
+  module:
+    - user
+id: user_add_role_action.maintenance
+label: 'Add the Maintenance role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: maintenance

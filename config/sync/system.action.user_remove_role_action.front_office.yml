@@ -1,0 +1,14 @@
+uuid: f4a3a497-6533-4bc1-9624-b4f2f6517ace
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.front_office
+  module:
+    - user
+id: user_remove_role_action.front_office
+label: 'Remove the Front Office role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: front_office

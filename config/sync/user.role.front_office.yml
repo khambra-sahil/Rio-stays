@@ -1,0 +1,10 @@
+uuid: 20b62d6a-9f4e-49f5-a225-7452873995cd
+langcode: en
+status: true
+dependencies: {  }
+id: front_office
+label: 'Front Office'
+weight: 6
+is_admin: null
+permissions:
+  - 'administer users'

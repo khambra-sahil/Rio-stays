@@ -1,0 +1,10 @@
+services:
+  guest_app_custom.UserFormAlter:
+    class: Drupal\guest_app_custom\EventSubscriber\UserFormAlterEventSubscriber
+    tags:
+      - { name: 'event_subscriber'}
+    
+  guest_app_custom.userCreateAlter:
+    class: Drupal\guest_app_custom\EventSubscriber\UserCreateAlterEventSubscriber
+    tags:
+      - { name: 'event_subscriber'}
