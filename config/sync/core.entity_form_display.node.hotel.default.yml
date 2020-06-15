@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.hotel.field_hotel_address
     - field.field.node.hotel.field_hotel_numbers
     - field.field.node.hotel.field_hotel_pictures
+    - field.field.node.hotel.field_hotel_room_type
+    - field.field.node.hotel.field_hotel_stay_plan
     - field.field.node.hotel.field_latitude_and_longitude
     - field.field.node.hotel.field_local_attraction
     - field.field.node.hotel.field_number_of_rooms
@@ -91,6 +93,18 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_hotel_room_type:
+    weight: 132
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hotel_stay_plan:
+    weight: 133
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_latitude_and_longitude:
     weight: 124

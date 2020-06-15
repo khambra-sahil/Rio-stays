@@ -1,0 +1,29 @@
+uuid: 0496caac-3cdc-4740-a238-dbdefbebd061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reservation_stay_plan
+    - node.type.reservations
+    - taxonomy.vocabulary.stay_plan
+id: node.reservations.field_reservation_stay_plan
+field_name: field_reservation_stay_plan
+entity_type: node
+bundle: reservations
+label: 'Stay Plan'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      stay_plan: stay_plan
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

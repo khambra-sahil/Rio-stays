@@ -1,0 +1,20 @@
+uuid: a93a9c94-c664-437d-a939-afb2cdc5c42d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_hotel_stay_plan
+field_name: field_hotel_stay_plan
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

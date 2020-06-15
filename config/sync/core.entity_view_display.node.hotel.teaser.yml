@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.hotel.field_hotel_address
     - field.field.node.hotel.field_hotel_numbers
     - field.field.node.hotel.field_hotel_pictures
+    - field.field.node.hotel.field_hotel_room_type
+    - field.field.node.hotel.field_hotel_stay_plan
     - field.field.node.hotel.field_latitude_and_longitude
     - field.field.node.hotel.field_local_attraction
     - field.field.node.hotel.field_number_of_rooms
@@ -43,6 +45,8 @@ hidden:
   field_hotel_address: true
   field_hotel_numbers: true
   field_hotel_pictures: true
+  field_hotel_room_type: true
+  field_hotel_stay_plan: true
   field_latitude_and_longitude: true
   field_local_attraction: true
   field_number_of_rooms: true

@@ -1,0 +1,23 @@
+uuid: b40620df-f66a-4f2c-99d4-ad786f4c4b49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.reservations
+  module:
+    - text
+id: node.reservations.body
+field_name: body
+entity_type: node
+bundle: reservations
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

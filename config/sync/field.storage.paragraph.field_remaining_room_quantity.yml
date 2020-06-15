@@ -1,0 +1,20 @@
+uuid: 35b0b875-78f5-4b63-9685-5348e9b2990a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_remaining_room_quantity
+field_name: field_remaining_room_quantity
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

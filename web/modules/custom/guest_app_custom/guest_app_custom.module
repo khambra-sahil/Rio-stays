@@ -31,6 +31,26 @@ use Drupal\paragraphs\Entity\Paragraph;
 
 function remaining_quantity_and_target_id($form_state){
 
+    /*
+    
+    $view = Views::getView('hotel_inventory_type');
+       // $view->setArguments($arg);
+        $view->setDisplay('page_1');
+        $view->preExecute();
+        $view->execute();
+        $result = $view->result;
+
+    kint($result[0]->_entity->field_hotel_rooms_quantity->getvalue());
+
+    $data = $result[0]->_entity->field_hotel_rooms_quantity->getvalue();
+
+    foreach($data as $key=>$value){
+    kint(reset($value));
+    }
+
+    exit;
+    */
+
     $data = [];
 
     $current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());

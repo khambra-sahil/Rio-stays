@@ -1,0 +1,23 @@
+uuid: 49116652-a18d-4af7-aedb-88a9c8f9c3e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_remaining_room_quantity
+    - paragraphs.paragraphs_type.hotel_room_type
+id: paragraph.hotel_room_type.field_remaining_room_quantity
+field_name: field_remaining_room_quantity
+entity_type: paragraph
+bundle: hotel_room_type
+label: 'Remaining Room Quantity'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

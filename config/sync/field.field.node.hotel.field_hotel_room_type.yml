@@ -1,0 +1,29 @@
+uuid: 5629b1fc-f1ea-46ed-87ab-85e3c6172959
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hotel_room_type
+    - node.type.hotel
+    - taxonomy.vocabulary.room_types
+id: node.hotel.field_hotel_room_type
+field_name: field_hotel_room_type
+entity_type: node
+bundle: hotel
+label: 'Hotel Room Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      room_types: room_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

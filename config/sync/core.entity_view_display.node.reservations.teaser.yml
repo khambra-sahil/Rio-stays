@@ -1,0 +1,40 @@
+uuid: 8833f3e7-424a-4a7e-97b2-99b852fe44e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.reservations.body
+    - field.field.node.reservations.field_check_in_check_out_date
+    - field.field.node.reservations.field_mobile_number
+    - field.field.node.reservations.field_reservation_room_type
+    - field.field.node.reservations.field_reservation_stay_plan
+    - field.field.node.reservations.field_user_full_name
+    - node.type.reservations
+  module:
+    - text
+    - user
+id: node.reservations.teaser
+targetEntityType: node
+bundle: reservations
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_check_in_check_out_date: true
+  field_mobile_number: true
+  field_reservation_room_type: true
+  field_reservation_stay_plan: true
+  field_user_full_name: true

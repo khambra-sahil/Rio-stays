@@ -1,0 +1,26 @@
+uuid: dc1d5f76-56ee-4683-8896-27808b94b55d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_check_in_check_out_date
+    - node.type.reservations
+  module:
+    - smart_date
+id: node.reservations.field_check_in_check_out_date
+field_name: field_check_in_check_out_date
+entity_type: node
+bundle: reservations
+label: 'Check in Check out Date'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: ''
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_duration: 60
+default_value_callback: ''
+settings: {  }
+field_type: smartdate
