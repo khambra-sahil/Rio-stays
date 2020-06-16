@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.commerce_remote_id
     - field.field.user.user.field_check_in_checkout_date
+    - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_first_name
     - field.field.user.user.field_from_city
     - field.field.user.user.field_from_state
@@ -18,6 +19,7 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - datetime
     - file
     - image
     - smart_date
@@ -40,6 +42,15 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: smartdate_default
+    region: content
+  field_date_of_birth:
+    weight: 14
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_first_name:
     weight: 1

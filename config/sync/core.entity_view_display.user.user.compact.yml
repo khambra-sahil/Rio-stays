@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.user.compact
     - field.field.user.user.commerce_remote_id
     - field.field.user.user.field_check_in_checkout_date
+    - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_first_name
     - field.field.user.user.field_from_city
     - field.field.user.user.field_from_state
@@ -41,6 +42,7 @@ hidden:
   commerce_remote_id: true
   customer_profiles: true
   field_check_in_checkout_date: true
+  field_date_of_birth: true
   field_first_name: true
   field_from_city: true
   field_from_state: true

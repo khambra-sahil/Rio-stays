@@ -34,7 +34,7 @@ class UserFormAlterEventSubscriber implements EventSubscriberInterface {
     $form = $event->getForm();
     if ($current_form_id == 'user_form') {
       $allowed_fields = array('field_check_in_checkout_date','field_hotel','field_room_number',
-        'field_plan_type','field_room_type','field_from_city','field_from_state');
+        'field_plan_type','field_room_type','field_from_city','field_from_state','field_first_name','','');
       $current_user = \Drupal::currentUser();
       $roles = $current_user->getRoles();
       if(in_array('front_office', $roles)) {
