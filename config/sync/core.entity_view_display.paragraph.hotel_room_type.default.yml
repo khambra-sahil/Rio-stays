@@ -1,0 +1,31 @@
+uuid: ea82facb-f3a1-4eb7-8b66-386ef037c114
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hotel_room_type.field_room_quantity
+    - field.field.paragraph.hotel_room_type.field_room_type
+    - paragraphs.paragraphs_type.hotel_room_type
+id: paragraph.hotel_room_type.default
+targetEntityType: paragraph
+bundle: hotel_room_type
+mode: default
+content:
+  field_room_quantity:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_room_type:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

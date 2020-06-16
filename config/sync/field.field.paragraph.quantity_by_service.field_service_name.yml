@@ -1,0 +1,29 @@
+uuid: 43760367-271f-4785-b8c5-7155dc114859
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_service_name
+    - paragraphs.paragraphs_type.quantity_by_service
+    - taxonomy.vocabulary.prime_services
+id: paragraph.quantity_by_service.field_service_name
+field_name: field_service_name
+entity_type: paragraph
+bundle: quantity_by_service
+label: 'Service name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      prime_services: prime_services
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

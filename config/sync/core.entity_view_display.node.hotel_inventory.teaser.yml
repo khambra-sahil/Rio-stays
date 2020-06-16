@@ -1,0 +1,38 @@
+uuid: b2246eab-04e1-4a49-a60f-d36d8412585b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hotel_inventory.body
+    - field.field.node.hotel_inventory.field_hotel_name
+    - field.field.node.hotel_inventory.field_hotel_rooms_quantity
+    - field.field.node.hotel_inventory.field_quantity_by_service
+    - field.field.node.hotel_inventory.field_stay_plan
+    - node.type.hotel_inventory
+  module:
+    - text
+    - user
+id: node.hotel_inventory.teaser
+targetEntityType: node
+bundle: hotel_inventory
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_hotel_name: true
+  field_hotel_rooms_quantity: true
+  field_quantity_by_service: true
+  field_stay_plan: true

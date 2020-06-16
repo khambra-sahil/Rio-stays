@@ -13,3 +13,4 @@ otp_username_request.form:
     _form: '\Drupal\guest_app_otp_login\Form\UsernameForm'
   requirements:
     _permission: 'access content'
+    _role: 'anonymous'

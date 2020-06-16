@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.hotel.body
     - field.field.node.hotel.field_helpline_numbers
+    - field.field.node.hotel.field_hotel_activities
     - field.field.node.hotel.field_hotel_address
     - field.field.node.hotel.field_hotel_numbers
     - field.field.node.hotel.field_hotel_pictures
@@ -41,6 +42,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_hotel_activities:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_hotel_address:
     weight: 103

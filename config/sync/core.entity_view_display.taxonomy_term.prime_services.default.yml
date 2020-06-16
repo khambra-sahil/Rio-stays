@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.prime_services.field_quantity
     - field.field.taxonomy_term.prime_services.field_url
     - taxonomy.vocabulary.prime_services
   module:
@@ -21,15 +20,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_quantity:
-    weight: 1
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
   field_url:
     weight: 3
     label: above

@@ -1,0 +1,29 @@
+uuid: 02cc251e-deaa-4741-a6e3-56c116b5e09e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stay_plan
+    - node.type.hotel_inventory
+    - taxonomy.vocabulary.stay_plan
+id: node.hotel_inventory.field_stay_plan
+field_name: field_stay_plan
+entity_type: node
+bundle: hotel_inventory
+label: 'Stay Plan'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      stay_plan: stay_plan
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

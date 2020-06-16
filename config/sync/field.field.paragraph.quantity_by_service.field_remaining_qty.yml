@@ -1,0 +1,23 @@
+uuid: e68d6630-443b-4afd-803f-77b7aee403b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_remaining_qty
+    - paragraphs.paragraphs_type.quantity_by_service
+id: paragraph.quantity_by_service.field_remaining_qty
+field_name: field_remaining_qty
+entity_type: paragraph
+bundle: quantity_by_service
+label: 'Remaining Quantity'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

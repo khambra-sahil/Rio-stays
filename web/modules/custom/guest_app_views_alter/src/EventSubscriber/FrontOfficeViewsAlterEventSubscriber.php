@@ -28,14 +28,18 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
    */
   public function ViewsQueryAlter(ViewsQueryAlterEvent $event )
   {
-    // Getting view object.
-    $view = $event->getView();
-    if($view->current_display == 'wifi_details' || $view->current_display == 'help_line_number' ||$view->current_display == 'hotel_number') {
-      // Getting Query object.
+
+    // Getting Query object.
       $query = $event->getQuery();
       $current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
       $hotel_id = $current_user->get('field_hotel')->first()->getValue()['target_id'];
+
+    // Getting view object.
+    $view = $event->getView();
+    if($view->current_display == 'wifi_details' || $view->current_display == 'help_line_number' ||$view->current_display == 'hotel_number' || $view->current_display == 'hotel_activities') {
+      
       $query->where[0]['conditions'][0]['value'][':node_field_data_nid'] = $hotel_id;
     }
+
   }
 }

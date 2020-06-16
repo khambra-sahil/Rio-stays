@@ -8,10 +8,13 @@ dependencies:
     - field.field.node.requests.field_quantity
     - field.field.node.requests.field_request
     - field.field.node.requests.field_room_number
+    - field.field.node.requests.field_service_date_time
     - field.field.node.requests.field_service_type
     - field.field.node.requests.field_sub_services
+    - field.field.node.requests.field_user_comments
     - node.type.requests
   module:
+    - datetime
     - text
     - user
 id: node.requests.default
@@ -59,6 +62,15 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_service_date_time:
+    weight: 9
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_service_type:
     weight: 6
     label: above
@@ -74,6 +86,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_user_comments:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   links:
     weight: 0

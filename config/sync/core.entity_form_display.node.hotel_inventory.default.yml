@@ -1,30 +1,26 @@
-uuid: 0305ff76-99fe-4792-9559-f6bb1f00f83c
+uuid: 2dae02bc-e356-48ab-97a1-2e263f4fcfd3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.requests.body
-    - field.field.node.requests.field_hotel
-    - field.field.node.requests.field_quantity
-    - field.field.node.requests.field_request
-    - field.field.node.requests.field_room_number
-    - field.field.node.requests.field_service_date_time
-    - field.field.node.requests.field_service_type
-    - field.field.node.requests.field_sub_services
-    - field.field.node.requests.field_user_comments
-    - node.type.requests
+    - field.field.node.hotel_inventory.body
+    - field.field.node.hotel_inventory.field_hotel_name
+    - field.field.node.hotel_inventory.field_hotel_rooms_quantity
+    - field.field.node.hotel_inventory.field_quantity_by_service
+    - field.field.node.hotel_inventory.field_stay_plan
+    - node.type.hotel_inventory
   module:
-    - datetime
+    - paragraphs
     - path
     - text
-id: node.requests.default
+id: node.hotel_inventory.default
 targetEntityType: node
-bundle: requests
+bundle: hotel_inventory
 mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 7
+    weight: 11
     settings:
       rows: 9
       summary_rows: 3
@@ -38,8 +34,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hotel:
-    weight: 8
+  field_hotel_name:
+    weight: 7
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -48,58 +44,35 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_quantity:
-    weight: 13
+  field_hotel_rooms_quantity:
+    type: entity_reference_paragraphs
+    weight: 28
     settings:
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: number
     region: content
-  field_request:
-    weight: 12
+  field_quantity_by_service:
+    type: entity_reference_paragraphs
+    weight: 26
     settings:
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: string_textfield
     region: content
-  field_room_number:
-    weight: 9
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_service_date_time:
+  field_stay_plan:
     weight: 27
     settings: {  }
     third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_service_type:
-    weight: 10
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_sub_services:
-    weight: 11
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_user_comments:
-    weight: 26
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
+    type: options_select
     region: content
   path:
     type: path

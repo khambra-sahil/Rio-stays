@@ -11,6 +11,7 @@ dependencies:
     - field.field.user.user.field_from_state
     - field.field.user.user.field_hotel
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_late_checkout
     - field.field.user.user.field_phone_number
     - field.field.user.user.field_plan_type
     - field.field.user.user.field_proof
@@ -91,6 +92,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_late_checkout:
+    weight: 14
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_phone_number:
     weight: 7

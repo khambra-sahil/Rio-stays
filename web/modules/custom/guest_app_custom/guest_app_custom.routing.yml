@@ -5,3 +5,19 @@ all_service_request.form:
     _form: '\Drupal\guest_app_custom\Form\RequestForm'
   requirements:
     _permission: 'access content'
+
+direct_service_request.form:
+  path: '/direct-request-form'
+  defaults:
+    _title: 'Request'
+    _form: '\Drupal\guest_app_custom\Form\DirectRequestForm'
+  requirements:
+    _permission: 'access content'
+
+issue_service_request.form:
+  path: '/issue-request-form'
+  defaults:
+    _title: 'Request'
+    _form: '\Drupal\guest_app_custom\Form\IssueRequestForm'
+  requirements:
+    _permission: 'access content'

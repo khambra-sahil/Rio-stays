@@ -1,0 +1,10 @@
+uuid: 7290fefb-20e9-40c7-a808-72e69276ff4a
+langcode: en
+status: true
+dependencies: {  }
+id: hotel_room_type
+label: 'Hotel Room Type'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,12 +1,12 @@
-uuid: b442510b-ce21-48a2-b33c-e91d30782fc8
+uuid: 4f58e515-1f3e-4e30-9261-b7ef9ba11313
 langcode: en
 status: true
 dependencies:
   module:
-    - taxonomy
-id: taxonomy_term.field_quantity
-field_name: field_quantity
-entity_type: taxonomy_term
+    - paragraphs
+id: paragraph.field_room_quantity
+field_name: field_room_quantity
+entity_type: paragraph
 type: integer
 settings:
   unsigned: false

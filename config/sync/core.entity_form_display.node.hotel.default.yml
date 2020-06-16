@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.hotel.body
     - field.field.node.hotel.field_helpline_numbers
+    - field.field.node.hotel.field_hotel_activities
     - field.field.node.hotel.field_hotel_address
     - field.field.node.hotel.field_hotel_numbers
     - field.field.node.hotel.field_hotel_pictures
@@ -54,6 +55,16 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_hotel_activities:
+    weight: 131
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_hotel_address:
     weight: 123
