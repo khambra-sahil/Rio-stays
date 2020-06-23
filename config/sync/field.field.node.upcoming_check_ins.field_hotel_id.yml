@@ -1,0 +1,19 @@
+uuid: df2b795f-610d-432e-a36b-8741aabfadae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hotel_id
+    - node.type.upcoming_check_ins
+id: node.upcoming_check_ins.field_hotel_id
+field_name: field_hotel_id
+entity_type: node
+bundle: upcoming_check_ins
+label: 'Hotel ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.requests.body
     - field.field.node.requests.field_hotel
+    - field.field.node.requests.field_order_status
     - field.field.node.requests.field_quantity
     - field.field.node.requests.field_request
     - field.field.node.requests.field_room_number
@@ -37,6 +38,7 @@ content:
     region: content
 hidden:
   field_hotel: true
+  field_order_status: true
   field_quantity: true
   field_request: true
   field_room_number: true

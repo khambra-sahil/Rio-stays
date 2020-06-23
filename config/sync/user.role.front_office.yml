@@ -8,3 +8,5 @@ weight: 6
 is_admin: null
 permissions:
   - 'administer users'
+  - 'administer workflow'
+  - 'create user_check workflow_transition'

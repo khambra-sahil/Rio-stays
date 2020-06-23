@@ -8,5 +8,6 @@ weight: 5
 is_admin: null
 permissions:
   - 'create blog content'
+  - 'create user_check workflow_transition'
   - 'delete own blog content'
   - 'edit own blog content'

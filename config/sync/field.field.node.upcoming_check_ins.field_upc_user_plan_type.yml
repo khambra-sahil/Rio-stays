@@ -1,0 +1,29 @@
+uuid: 3b5538b1-5d45-4428-81e0-a2cfaf4afd32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upc_user_plan_type
+    - node.type.upcoming_check_ins
+    - taxonomy.vocabulary.stay_plan
+id: node.upcoming_check_ins.field_upc_user_plan_type
+field_name: field_upc_user_plan_type
+entity_type: node
+bundle: upcoming_check_ins
+label: 'Stay Plan Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      stay_plan: stay_plan
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

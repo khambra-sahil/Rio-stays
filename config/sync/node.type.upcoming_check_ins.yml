@@ -1,0 +1,17 @@
+uuid: 9849ffba-c0bc-45db-840c-233649c4f786
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Upcoming Check-ins'
+type: upcoming_check_ins
+description: 'To Hold rooms for upcoming check-ins'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

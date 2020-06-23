@@ -9,7 +9,6 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Url;
 use Drupal\paragraphs\Entity\Paragraph;
 
-
 /*function hotel_inventory_getData($form_state){
 
 	$current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
@@ -29,52 +28,31 @@ use Drupal\paragraphs\Entity\Paragraph;
     return $result[0]->_entity;
 }*/
 
-function remaining_quantity_and_target_id($form_state){
+function hotel_stock_remaining_quantity_and_target_id($form_state){
 
     /*
-    
     $view = Views::getView('hotel_inventory_type');
        // $view->setArguments($arg);
         $view->setDisplay('page_1');
         $view->preExecute();
         $view->execute();
         $result = $view->result;
-
     kint($result[0]->_entity->field_hotel_rooms_quantity->getvalue());
-
     $data = $result[0]->_entity->field_hotel_rooms_quantity->getvalue();
-
     foreach($data as $key=>$value){
     kint(reset($value));
     }
-
     exit;
     */
-
     $data = [];
-
-    $current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-    $hotel_id = $current_user->get('field_hotel')->first()->getValue()['target_id'];
+    $hotel_id = get_hotel_id();
     $service_id = $form_state->getValue('final_services');
-
-    $entity_ids = \Drupal::entityQuery('node')
-      ->condition('type', 'hotel_inventory')
-      ->condition('field_hotel_name', $hotel_id)
-      ->execute();
-
-    $hotel_nid = reset($entity_ids);//fetch first record in case of multiple
-
-    $node_data = \Drupal::entityManager()->getStorage('node')->load($hotel_nid);
-
+    $node_data = hotel_inventory_data($hotel_id);
     $para = $node_data->field_quantity_by_service->getValue();
-
     foreach($para as $key => $value){
-
         $target_id = $value['target_id'];
-
         $paragraph = Paragraph::load($target_id);
         $para_service_id = $paragraph->field_service_name->target_id;
-
         if($para_service_id == $service_id){
             $remaining_qty = $paragraph->field_remaining_qty->value;
             $found_target_id = $target_id;
@@ -82,6 +60,38 @@ function remaining_quantity_and_target_id($form_state){
             return $data;
         }
     }
+    return $data;
+}
 
+//This provides hotel inventry node_load by hotel id
+function hotel_inventory_data($hotel_id){
+    $entity_ids = \Drupal::entityQuery('node')
+      ->condition('type', 'hotel_inventory')
+      ->condition('field_hotel_name', $hotel_id)
+      ->execute();
+    $hotel_nid = reset($entity_ids);//fetch first record in case of multiple
+    return $node_data = \Drupal::entityManager()->getStorage('node')->load($hotel_nid);
+}
+
+// This provide hotel id of current user
+function get_hotel_id(){
+    $current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    return $current_user->get('field_hotel')->first()->getValue()['target_id'];
+}
+
+function hotel_room_available_qty($hotel_id,$room_type){
+    $data = [];
+    $node_data = hotel_inventory_data($hotel_id);
+    $para = $node_data->field_hotel_rooms_quantity->getValue();
+    foreach($para as $key => $value){
+        $target_id = $value['target_id'];
+        $paragraph = Paragraph::load($target_id);
+        $para_room_type = $paragraph->field_room_type->target_id;
+        if($para_room_type == $room_type){
+            $available_room_qty = $paragraph->get('field_remaining_room_quantity')->value;
+            $data = array('remaining_qty' => $available_room_qty, 'paragraph' => $paragraph );
+            return $data;
+        }
+    }
     return $data;
 }

@@ -31,8 +31,10 @@ class UserFormAlterEventSubscriber implements EventSubscriberInterface {
   public function loginFormAlter($event)
   {
     $current_form_id = $event->getFormId();
+
     $form = $event->getForm();
     if ($current_form_id == 'user_form') {
+      
       $allowed_fields = array('field_check_in_checkout_date','field_hotel','field_room_number',
         'field_plan_type','field_room_type','field_from_city','field_from_state','field_first_name','','');
       $current_user = \Drupal::currentUser();
@@ -50,6 +52,21 @@ class UserFormAlterEventSubscriber implements EventSubscriberInterface {
         }
       }
     }
+    //request form alter
+    if($current_form_id == 'node_requests_edit_form'){
+      //get current selected value
+      $value = $form['field_order_status']['widget']['#default_value'][0];
+      if($value == 'pending' || $value == NULL){
+        unset($form['field_order_status']['widget']['#options']['revert_inventory']);
+      }
+      if($value == 'confirm'){
+        unset($form['field_order_status']['widget']['#options']['pending']);
+      }
+      if($value == 'revert_inventory'){
+        $form['field_order_status']['widget']['#attributes']['disabled'] = 'disabled';
+      }
+    }
+
     $event->setForm($form);
   }
 }

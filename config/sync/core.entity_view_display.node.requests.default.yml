@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.requests.body
     - field.field.node.requests.field_hotel
+    - field.field.node.requests.field_order_status
     - field.field.node.requests.field_quantity
     - field.field.node.requests.field_request
     - field.field.node.requests.field_room_number
@@ -15,6 +16,7 @@ dependencies:
     - node.type.requests
   module:
     - datetime
+    - options
     - text
     - user
 id: node.requests.default
@@ -36,6 +38,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_order_status:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_quantity:
     weight: 7

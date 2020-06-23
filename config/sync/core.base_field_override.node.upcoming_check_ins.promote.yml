@@ -1,0 +1,22 @@
+uuid: 9b2e5156-07e7-4860-8174-1c82eec99e96
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.upcoming_check_ins
+id: node.upcoming_check_ins.promote
+field_name: promote
+entity_type: node
+bundle: upcoming_check_ins
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

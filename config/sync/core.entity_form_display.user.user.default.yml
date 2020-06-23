@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_check_in_check_out
     - field.field.user.user.field_check_in_checkout_date
     - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_first_name
@@ -43,6 +44,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_check_in_check_out:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_check_in_checkout_date:
     weight: 12
     settings:

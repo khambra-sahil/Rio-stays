@@ -1,0 +1,29 @@
+uuid: 40b608ca-7a67-4062-ab03-0ce7f2d27f3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_check_in_from
+    - node.type.upcoming_check_ins
+    - taxonomy.vocabulary.online_travel_agencies
+id: node.upcoming_check_ins.field_check_in_from
+field_name: field_check_in_from
+entity_type: node
+bundle: upcoming_check_ins
+label: 'Check in from'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      online_travel_agencies: online_travel_agencies
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

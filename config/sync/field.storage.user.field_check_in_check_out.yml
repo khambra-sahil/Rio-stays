@@ -1,0 +1,27 @@
+uuid: e147d7f9-3c3b-423b-a9e6-0249a2d4eedc
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_check_in_check_out
+field_name: field_check_in_check_out
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: check_in
+      label: 'Check In'
+    -
+      value: check_out
+      label: 'Check Out'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

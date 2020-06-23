@@ -1,0 +1,19 @@
+uuid: 5c2f5e10-8281-4ed5-b296-54fee412170c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upc_user_mobile_number
+    - node.type.upcoming_check_ins
+id: node.upcoming_check_ins.field_upc_user_mobile_number
+field_name: field_upc_user_mobile_number
+entity_type: node
+bundle: upcoming_check_ins
+label: 'Mobile Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

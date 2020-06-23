@@ -36,12 +36,17 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
 
     // Getting view object.
     $view = $event->getView();
+
     if($view->current_display == 'wifi_details' || $view->current_display == 'help_line_number' ||$view->current_display == 'hotel_number' || $view->current_display == 'hotel_activities' || $view->current_display == 'hotel_rooms_types') {
       
       $query->where[0]['conditions'][0]['value'][':node_field_data_nid'] = $hotel_id;
     }
     else if($view->current_display == 'request_housekeeping' || $view->current_display == 'requests' || $view->current_display == 'report_issue'){
       $query->where[0]['conditions'][0]['value'][':node__field_hotel_field_hotel_target_id'] = $hotel_id;
+    }
+    
+   if($view->current_display == 'client'){
+      $query->where[0]['conditions'][0]['value'][':user__field_hotel_field_hotel_target_id'] = $hotel_id;
     }
   }
 }

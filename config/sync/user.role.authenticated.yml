@@ -16,6 +16,7 @@ permissions:
   - 'access kint'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'create user_check workflow_transition'
   - 'execute php code'
   - 'manage own commerce_payment_method'
   - 'post comments'

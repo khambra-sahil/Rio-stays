@@ -1,0 +1,50 @@
+uuid: 78f79560-2df2-4e9e-a672-e6f6658da93e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.upcoming_check_ins.body
+    - field.field.node.upcoming_check_ins.field_arrival_time
+    - field.field.node.upcoming_check_ins.field_check_in_from
+    - field.field.node.upcoming_check_ins.field_hotel_id
+    - field.field.node.upcoming_check_ins.field_payment_status
+    - field.field.node.upcoming_check_ins.field_reference
+    - field.field.node.upcoming_check_ins.field_upc_user_full_name
+    - field.field.node.upcoming_check_ins.field_upc_user_mobile_number
+    - field.field.node.upcoming_check_ins.field_upc_user_plan_type
+    - field.field.node.upcoming_check_ins.field_upc_user_room_type
+    - field.field.node.upcoming_check_ins.field_user_checkin_checkout_date
+    - node.type.upcoming_check_ins
+  module:
+    - text
+    - user
+id: node.upcoming_check_ins.teaser
+targetEntityType: node
+bundle: upcoming_check_ins
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_arrival_time: true
+  field_check_in_from: true
+  field_hotel_id: true
+  field_payment_status: true
+  field_reference: true
+  field_upc_user_full_name: true
+  field_upc_user_mobile_number: true
+  field_upc_user_plan_type: true
+  field_upc_user_room_type: true
+  field_user_checkin_checkout_date: true

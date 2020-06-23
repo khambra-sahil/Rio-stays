@@ -1,0 +1,19 @@
+uuid: 9501790f-b0e3-4514-9000-79f23750a6dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upc_user_full_name
+    - node.type.upcoming_check_ins
+id: node.upcoming_check_ins.field_upc_user_full_name
+field_name: field_upc_user_full_name
+entity_type: node
+bundle: upcoming_check_ins
+label: 'Full Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

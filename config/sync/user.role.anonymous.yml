@@ -15,6 +15,7 @@ permissions:
   - 'access devel information'
   - 'access kint'
   - 'access site-wide contact form'
+  - 'create user_check workflow_transition'
   - 'search content'
   - 'use text format restricted_html'
   - 'view commerce_product'

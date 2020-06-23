@@ -1,0 +1,26 @@
+uuid: 6911d829-88cb-48bd-b9f6-ec400d815c54
+langcode: en
+status: true
+dependencies:
+  module:
+    - guest_app_custom
+    - system
+  theme:
+    - bartik
+id: roominformation
+theme: bartik
+region: content
+weight: -2
+provider: null
+plugin: room_information
+settings:
+  id: room_information
+  label: 'Hotel Room Inventory'
+  provider: guest_app_custom
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

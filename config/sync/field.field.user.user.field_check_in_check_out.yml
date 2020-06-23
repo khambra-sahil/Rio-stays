@@ -1,0 +1,21 @@
+uuid: aa04ae52-31d1-4eb8-94d8-cc72d502064f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_check_in_check_out
+  module:
+    - options
+    - user
+id: user.user.field_check_in_check_out
+field_name: field_check_in_check_out
+entity_type: user
+bundle: user
+label: 'Check In / Check Out'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

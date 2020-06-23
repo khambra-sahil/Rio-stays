@@ -1,0 +1,26 @@
+uuid: 1f75361c-9a08-4bc9-afc2-77942eb7dd44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_checkin_checkout_date
+    - node.type.upcoming_check_ins
+  module:
+    - smart_date
+id: node.upcoming_check_ins.field_user_checkin_checkout_date
+field_name: field_user_checkin_checkout_date
+entity_type: node
+bundle: upcoming_check_ins
+label: 'check in / checkout date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: ''
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_duration: 60
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

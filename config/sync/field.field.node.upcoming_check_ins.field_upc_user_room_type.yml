@@ -1,0 +1,29 @@
+uuid: a2a9ac03-1c76-4bec-bb42-72b6aee426b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upc_user_room_type
+    - node.type.upcoming_check_ins
+    - taxonomy.vocabulary.room_types
+id: node.upcoming_check_ins.field_upc_user_room_type
+field_name: field_upc_user_room_type
+entity_type: node
+bundle: upcoming_check_ins
+label: 'Room Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      room_types: room_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

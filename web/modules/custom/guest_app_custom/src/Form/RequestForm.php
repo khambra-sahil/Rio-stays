@@ -71,7 +71,7 @@ class RequestForm extends FormBase
   {
     //$inventory_data = hotel_inventory_getData($form_state);
 
-    $inventory_data = remaining_quantity_and_target_id($form_state);
+    $inventory_data = hotel_stock_remaining_quantity_and_target_id($form_state);
 
     if(!empty($inventory_data)){
       //$allowed_quantity = $inventory_data->get('field_remaining_quantity')->value;
@@ -126,7 +126,7 @@ class RequestForm extends FormBase
 
     //$inventory_data = hotel_inventory_getData($form_state);
     //$allowed_quantity = $inventory_data->get('field_remaining_quantity')->value;
-    $inventory_data = remaining_quantity_and_target_id($form_state);
+    $inventory_data = hotel_stock_remaining_quantity_and_target_id($form_state);
     $allowed_quantity = $inventory_data['remaining_qty'];
     $remaining_qty = $allowed_quantity - $quantity;
     $paragraph_target_id = $inventory_data['target_id'];

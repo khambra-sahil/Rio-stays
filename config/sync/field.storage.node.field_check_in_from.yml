@@ -1,0 +1,20 @@
+uuid: ee283b6b-6693-439a-8a71-b5112117e6b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_check_in_from
+field_name: field_check_in_from
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,26 +1,28 @@
-uuid: 0305ff76-99fe-4792-9559-f6bb1f00f83c
+uuid: 73902d33-4a44-4333-80af-3cf659d37571
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.requests.body
-    - field.field.node.requests.field_hotel
-    - field.field.node.requests.field_order_status
-    - field.field.node.requests.field_quantity
-    - field.field.node.requests.field_request
-    - field.field.node.requests.field_room_number
-    - field.field.node.requests.field_service_date_time
-    - field.field.node.requests.field_service_type
-    - field.field.node.requests.field_sub_services
-    - field.field.node.requests.field_user_comments
-    - node.type.requests
+    - field.field.node.upcoming_check_ins.body
+    - field.field.node.upcoming_check_ins.field_arrival_time
+    - field.field.node.upcoming_check_ins.field_check_in_from
+    - field.field.node.upcoming_check_ins.field_hotel_id
+    - field.field.node.upcoming_check_ins.field_payment_status
+    - field.field.node.upcoming_check_ins.field_reference
+    - field.field.node.upcoming_check_ins.field_upc_user_full_name
+    - field.field.node.upcoming_check_ins.field_upc_user_mobile_number
+    - field.field.node.upcoming_check_ins.field_upc_user_plan_type
+    - field.field.node.upcoming_check_ins.field_upc_user_room_type
+    - field.field.node.upcoming_check_ins.field_user_checkin_checkout_date
+    - node.type.upcoming_check_ins
   module:
     - datetime
     - path
+    - smart_date
     - text
-id: node.requests.default
+id: node.upcoming_check_ins.default
 targetEntityType: node
-bundle: requests
+bundle: upcoming_check_ins
 mode: default
 content:
   body:
@@ -39,60 +41,25 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hotel:
-    weight: 8
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_order_status:
-    weight: 28
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_quantity:
-    weight: 13
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
-  field_request:
+  field_arrival_time:
     weight: 12
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_room_number:
-    weight: 9
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_service_date_time:
-    weight: 27
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_service_type:
-    weight: 10
-    settings:
-      size: 60
-      placeholder: ''
+  field_check_in_from:
+    weight: 16
+    settings: {  }
     third_party_settings: {  }
-    type: string_textfield
+    type: options_select
     region: content
-  field_sub_services:
+  field_payment_status:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_reference:
     weight: 11
     settings:
       size: 60
@@ -100,13 +67,40 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_user_comments:
-    weight: 26
+  field_upc_user_full_name:
+    weight: 8
     settings:
-      rows: 5
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
+    type: string_textfield
+    region: content
+  field_upc_user_mobile_number:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_upc_user_plan_type:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_upc_user_room_type:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_user_checkin_checkout_date:
+    weight: 10
+    settings:
+      modal: false
+    third_party_settings: {  }
+    type: smartdate_default
     region: content
   path:
     type: path
@@ -153,4 +147,5 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_hotel_id: true

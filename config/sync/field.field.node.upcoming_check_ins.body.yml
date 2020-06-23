@@ -1,0 +1,23 @@
+uuid: 5016919f-7ce9-4d5d-b3a2-520713ce4fd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.upcoming_check_ins
+  module:
+    - text
+id: node.upcoming_check_ins.body
+field_name: body
+entity_type: node
+bundle: upcoming_check_ins
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
