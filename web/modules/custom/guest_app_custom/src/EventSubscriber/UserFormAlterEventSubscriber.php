@@ -52,21 +52,6 @@ class UserFormAlterEventSubscriber implements EventSubscriberInterface {
         }
       }
     }
-    //request form alter
-    if($current_form_id == 'node_requests_edit_form'){
-      //get current selected value
-      $value = $form['field_order_status']['widget']['#default_value'][0];
-      if($value == 'pending' || $value == NULL){
-        unset($form['field_order_status']['widget']['#options']['revert_inventory']);
-      }
-      if($value == 'confirm'){
-        unset($form['field_order_status']['widget']['#options']['pending']);
-      }
-      if($value == 'revert_inventory'){
-        $form['field_order_status']['widget']['#attributes']['disabled'] = 'disabled';
-      }
-    }
-
     $event->setForm($form);
   }
 }

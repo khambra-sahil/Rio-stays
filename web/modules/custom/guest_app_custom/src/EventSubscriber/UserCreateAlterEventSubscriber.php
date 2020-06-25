@@ -89,7 +89,6 @@ class UserCreateAlterEventSubscriber implements EventSubscriberInterface {
         $request->save();
       }
 
-
       //$current_user = \Drupal\user\Entity\User::load($uid);
         $check_in_check_out_status = $entity->get('field_check_in_check_out')->value;
 
@@ -122,72 +121,9 @@ class UserCreateAlterEventSubscriber implements EventSubscriberInterface {
         else{
           drupal_set_message('Hotel and Room Type required.','error');
         }
-
       } 
-  
     }
-
-    /*-----requests------*/
-
-    if($entity->bundle() == 'requests'){
-
-      $request_status = $entity->get('field_order_status')->value;
-      $original_request_status = $entity->original->get('field_order_status')->value;
-
-      if($request_status == 'revert_inventory' && $original_request_status != $request_status ){
-
-        $hotel_id = $entity->get('field_hotel')->target_id;
-        $request = $entity->get('field_sub_services')->value;
-        $qauntity = $entity->get('field_quantity')->value;
-
-        /* get tid by term name*/
-
-        $term = \Drupal::entityTypeManager()
-        ->getStorage('taxonomy_term')
-        ->loadByProperties(['name' => $request]);
-        $term = reset($term);
-        $service_id = $term->id();
-
-        $node_data = hotel_inventory_data($hotel_id);
-
-        $para = $node_data->field_quantity_by_service->getValue();
-
-        foreach($para as $key => $value){
-
-          $target_id = $value['target_id'];
-
-          $paragraph = Paragraph::load($target_id);
-          $para_service_id = $paragraph->field_service_name->target_id;
-
-          if($para_service_id == $service_id){
-              $remaining_qty = $paragraph->field_remaining_qty->value;
-              $new_qty = $remaining_qty + $qauntity;
-              $paragraph->set('field_remaining_qty', $new_qty);
-              $paragraph->save();
-          }
-        }
-      }
-    }
-    /*-----requests------*/
-
-    /*-----upcoming_check_ins------*/
-
-    if($entity->bundle() == 'upcoming_check_ins'){
-
-      $hotel_id = $entity->get('field_hotel_id')->value;
-      if($hotel_id == NULL){
-        $current_user_hotel_id = get_hotel_id(); 
-        $node = Node::load($entity->id());
-        $node->field_hotel_id = [$current_user_hotel_id];
-        $node->save();
-      }
-
-      $room_type = $entity->get('field_upc_user_room_type')->value;
-      $check_in_date = $entity->get('field_user_checkin_checkout_date')->value;
-
-    }
-
-    /*-----upcoming_check_ins------*/
+ 
 
   }
 }

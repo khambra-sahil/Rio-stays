@@ -8,3 +8,13 @@ services:
     class: Drupal\guest_app_custom\EventSubscriber\UserCreateAlterEventSubscriber
     tags:
       - { name: 'event_subscriber'}
+
+  guest_app_custom.nodeCreateAlter:
+    class: \Drupal\guest_app_custom\EventSubscriber\NodeCreateAlterEventSubscriber
+    tags:
+      - { name: 'event_subscriber' }
+
+  guest_app_custom.NodeFormAlter:
+    class: Drupal\guest_app_custom\EventSubscriber\NodeFormAlterEventSubscriber
+    tags:
+      - { name: 'event_subscriber'}
