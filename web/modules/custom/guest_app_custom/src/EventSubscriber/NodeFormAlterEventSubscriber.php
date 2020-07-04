@@ -5,7 +5,7 @@ namespace Drupal\guest_app_custom\EventSubscriber;
 use Drupal\Core\Url;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
-
+//use Drupal\Core\Form\FormStateInterface;
 /**
  * The class is used to implement event for form alter.
  *
@@ -47,6 +47,13 @@ class NodeFormAlterEventSubscriber implements EventSubscriberInterface {
       if($value == 'revert_inventory'){
         $form['field_order_status']['widget']['#attributes']['disabled'] = 'disabled';
       }
+    }
+
+    if($current_form_id == 'node_upcoming_check_ins_form'){
+      $form['#validate'][] = 'upcoming_check_ins_validate';
+    }
+    if($current_form_id == 'node_hotel_inventory_form' || $current_form_id == 'node_hotel_inventory_edit_form'){
+      $form['#validate'][] = 'hotel_inventory_validate';
     }
 
     $event->setForm($form);

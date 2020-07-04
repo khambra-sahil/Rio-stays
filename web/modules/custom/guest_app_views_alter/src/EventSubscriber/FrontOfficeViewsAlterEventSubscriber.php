@@ -28,25 +28,51 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
    */
   public function ViewsQueryAlter(ViewsQueryAlterEvent $event )
   {
-
     // Getting Query object.
       $query = $event->getQuery();
       $current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-      $hotel_id = $current_user->get('field_hotel')->first()->getValue()['target_id'];
-
+      if(\Drupal::currentUser()->id() != 0){
+        $hotel_id = $current_user->get('field_hotel')->first()->getValue()['target_id'];
+      }
+      
     // Getting view object.
     $view = $event->getView();
 
-    if($view->current_display == 'wifi_details' || $view->current_display == 'help_line_number' ||$view->current_display == 'hotel_number' || $view->current_display == 'hotel_activities' || $view->current_display == 'hotel_rooms_types') {
+    $hotel_views = ['wifi_details','help_line_number','hotel_number','hotel_activities','hotel_rooms_types'];
+    $requests_views = ['request_housekeeping','requests','report_issue'];
+    $upcoming_checkins_views = ['upcoming_checkins','future_checkins'];
+    $booking = ['confirm_checkins','cancelled_bookings'];
+    $user_history = ['checkout_log','user_history'];
+    $hotel_inventory = ['rooms_inventory','service_inventory'];
+
+    if(!empty($hotel_id) && in_array($view->current_display, $hotel_views)) {
       
       $query->where[0]['conditions'][0]['value'][':node_field_data_nid'] = $hotel_id;
     }
-    else if($view->current_display == 'request_housekeeping' || $view->current_display == 'requests' || $view->current_display == 'report_issue'){
+
+    if(!empty($hotel_id) && in_array($view->current_display, $requests_views)){
       $query->where[0]['conditions'][0]['value'][':node__field_hotel_field_hotel_target_id'] = $hotel_id;
     }
     
-   if($view->current_display == 'client'){
+   if(!empty($hotel_id) && $view->current_display == 'client'){
       $query->where[0]['conditions'][0]['value'][':user__field_hotel_field_hotel_target_id'] = $hotel_id;
     }
+
+    if(!empty($hotel_id) && in_array($view->current_display, $upcoming_checkins_views)){
+      $query->where[0]['conditions'][0]['value'] = $hotel_id;
+    }
+
+    if(!empty($hotel_id) && in_array($view->current_display, $booking)){
+      $query->where[0]['conditions'][1]['value'] = $hotel_id;
+    }
+
+    if(!empty($hotel_id) && in_array($view->current_display, $hotel_inventory)){
+      $query->where[0]['conditions'][0]['value'][':node__field_hotel_name_field_hotel_name_target_id'] = $hotel_id;
+    }
+
+    if(!empty($hotel_id) && in_array($view->current_display, $user_history)){
+      $query->where[0]['conditions'][0]['value'][':node__field_user_history_hotel_field_user_history_hotel_target_id'] = $hotel_id;
+    }
+
   }
 }
