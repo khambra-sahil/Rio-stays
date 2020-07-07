@@ -32,6 +32,9 @@ class NodeFormAlterEventSubscriber implements EventSubscriberInterface {
   {
     $current_form_id = $event->getFormId();
 
+    //kint($current_form_id);
+    //exit;
+
     $form = $event->getForm();
 
     //request form alter
@@ -52,6 +55,11 @@ class NodeFormAlterEventSubscriber implements EventSubscriberInterface {
     if($current_form_id == 'node_upcoming_check_ins_form'){
       $form['#validate'][] = 'upcoming_check_ins_validate';
     }
+
+    if($current_form_id == 'node_upcoming_check_ins_edit_form'){
+      //$form['#validate'][] = 'upcoming_check_edit_validate';
+    }
+
     if($current_form_id == 'node_hotel_inventory_form' || $current_form_id == 'node_hotel_inventory_edit_form'){
       $form['#validate'][] = 'hotel_inventory_validate';
     }

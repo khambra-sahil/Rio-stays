@@ -272,6 +272,53 @@ function upcoming_check_ins_validate(&$form, &$form_state){
     
   }
 
+ /**
+  * Upcoming checkins edit validate
+  */
+  function upcoming_check_edit_validate(&$form, &$form_state){
+
+    $date_count = 0;
+    $hotel_id = get_hotel_id();
+    $date_available_count = 0;
+    $rooms_status_on_selected_date =[];
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $nid = $node->id();
+    }
+    $node_data = Node::load($nid);
+    $old_room_type = $node_data->get('field_upc_user_room_type')->target_id;
+    $old_start_date = $node_data->get('field_user_checkin_checkout_date')->value;
+    $old_end_date = $node_data->get('field_user_checkin_checkout_date')->end_value;
+    //Current form values
+    $room_type = $form_state->getValue('field_upc_user_room_type')[0][target_id];
+    $date_from = $form_state->getValue('field_user_checkin_checkout_date')[0][value]->getPhpDateTime()->getTimestamp();
+    $date_to = $form_state->getValue('field_user_checkin_checkout_date')[0][end_value]->getPhpDateTime()->getTimestamp();
+
+    if($old_room_type != $room_type || $old_start_date != $start_date || $old_end_date != $end_date){
+        
+        for ($i=$date_from; $i<=$date_to-86400; $i+=86400) {
+           $room_status = get_room_by_date_type(date("Y-m-d", $i),$room_type);
+
+           if(!$room_status['flag']){
+            $date_available_count++; 
+           }
+           elseif($room_status['flag'] && $room_status['available_qty'] > 0){
+            $date_available_count++;
+           }
+           $date_count++;
+           $rooms_status_on_selected_date[] = array(date("Y-m-d", $i),$room_status['available_qty']);
+        }
+
+        if($date_available_count == $date_count){
+            
+        }
+        exit;
+
+
+    }
+  } 
+
 /**
  * Check blocked room always less than available rooms.
  */
@@ -325,7 +372,9 @@ function get_room_by_date_type($date,$room_type){
  */
 function user_checkin_validate(&$form, &$form_state){
 
-    //kint($form_state->getStorage());
+    //kint($form_state->get('field_storage'));
+    //kint($form['#process']);
+    //$form_state->getValue('field_upc_user_room_type')[0]
     //exit;
 
 }
