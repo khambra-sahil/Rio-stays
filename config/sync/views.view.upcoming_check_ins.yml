@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_check_in_from
+    - field.storage.node.field_hotel_id
     - field.storage.node.field_payment_status
     - field.storage.node.field_upc_user_full_name
     - field.storage.node.field_upc_user_mobile_number
@@ -125,134 +126,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_user_checkin_checkout_date:
-          id: field_user_checkin_checkout_date
-          table: node__field_user_checkin_checkout_date
-          field: field_user_checkin_checkout_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'check in / checkout date'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: smartdate_default
-          settings:
-            timezone_override: ''
-            format: compact
-            force_chronological: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_check_in_from:
-          id: field_check_in_from
-          table: node__field_check_in_from
-          field: field_check_in_from
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Check in from'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         field_upc_user_full_name:
           id: field_upc_user_full_name
           table: node__field_upc_user_full_name
@@ -379,14 +252,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_payment_status:
-          id: field_payment_status
-          table: node__field_payment_status
-          field: field_payment_status
+        field_user_checkin_checkout_date:
+          id: field_user_checkin_checkout_date
+          table: node__field_user_checkin_checkout_date
+          field: field_user_checkin_checkout_date
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Payment Status'
+          label: 'check in / checkout date'
           exclude: false
           alter:
             alter_text: false
@@ -428,8 +301,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: list_default
-          settings: {  }
+          type: smartdate_default
+          settings:
+            timezone_override: ''
+            format: compact
+            force_chronological: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -567,6 +443,194 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_payment_status:
+          id: field_payment_status
+          table: node__field_payment_status
+          field: field_payment_status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Payment Status'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_check_in_from:
+          id: field_check_in_from
+          table: node__field_check_in_from
+          field: field_check_in_from
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Check in from'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_hotel_id:
+          id: field_hotel_id
+          table: node__field_hotel_id
+          field: field_hotel_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Hotel ID'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -659,52 +723,319 @@ display:
       footer: {  }
       empty: {  }
       relationships: {  }
-      arguments: {  }
+      arguments:
+        field_hotel_id_value:
+          id: field_hotel_id_value
+          table: node__field_hotel_id
+          field: field_hotel_id_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: '2'
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
+          break_phrase: false
+          plugin_id: string
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
         - 'config:field.storage.node.field_payment_status'
         - 'config:field.storage.node.field_upc_user_full_name'
         - 'config:field.storage.node.field_upc_user_mobile_number'
         - 'config:field.storage.node.field_upc_user_plan_type'
         - 'config:field.storage.node.field_upc_user_room_type'
         - 'config:field.storage.node.field_user_checkin_checkout_date'
-  page_1:
+  cancelled_bookings:
     display_plugin: page
-    id: page_1
-    display_title: 'Upcoming Check-in'
-    position: 1
+    id: cancelled_bookings
+    display_title: 'Cancelled Booking'
+    position: 4
     display_options:
       display_extenders: {  }
-      path: upcoming-check-ins
       display_description: ''
+      title: 'Cancelled Bookings'
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      path: cancelled-bookings
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            upcoming_check_ins: upcoming_check_ins
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_booking_status_value:
+          id: field_booking_status_value
+          table: node__field_booking_status
+          field: field_booking_status_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            3: '3'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
         - 'config:field.storage.node.field_payment_status'
         - 'config:field.storage.node.field_upc_user_full_name'
         - 'config:field.storage.node.field_upc_user_mobile_number'
         - 'config:field.storage.node.field_upc_user_plan_type'
         - 'config:field.storage.node.field_upc_user_room_type'
         - 'config:field.storage.node.field_user_checkin_checkout_date'
-  page_2:
+  confirm_checkins:
     display_plugin: page
-    id: page_2
+    id: confirm_checkins
+    display_title: 'Confirm Check-ins'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      title: 'Confirm Check Ins'
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      path: confirm-check-ins
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            upcoming_check_ins: upcoming_check_ins
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_user_checkin_checkout_date_value:
+          id: field_user_checkin_checkout_date_value
+          table: node__field_user_checkin_checkout_date
+          field: field_user_checkin_checkout_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: between
+          value:
+            min: today
+            max: '+1 day'
+            value: ''
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: date
+        field_payment_status_value:
+          id: field_payment_status_value
+          table: node__field_payment_status
+          field: field_payment_status_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            paid: paid
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
+        - 'config:field.storage.node.field_payment_status'
+        - 'config:field.storage.node.field_upc_user_full_name'
+        - 'config:field.storage.node.field_upc_user_mobile_number'
+        - 'config:field.storage.node.field_upc_user_plan_type'
+        - 'config:field.storage.node.field_upc_user_room_type'
+        - 'config:field.storage.node.field_user_checkin_checkout_date'
+  future_checkins:
+    display_plugin: page
+    id: future_checkins
     display_title: 'Future Check-ins'
     position: 2
     display_options:
@@ -784,21 +1115,52 @@ display:
       defaults:
         filters: false
         filter_groups: false
+        title: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      display_description: ''
+      title: 'Future Check Ins'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
+        - 'config:field.storage.node.field_payment_status'
+        - 'config:field.storage.node.field_upc_user_full_name'
+        - 'config:field.storage.node.field_upc_user_mobile_number'
+        - 'config:field.storage.node.field_upc_user_plan_type'
+        - 'config:field.storage.node.field_upc_user_room_type'
+        - 'config:field.storage.node.field_user_checkin_checkout_date'
+  upcoming_checkins:
+    display_plugin: page
+    id: upcoming_checkins
+    display_title: 'Upcoming Check-in'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: upcoming-check-ins
       display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
         - 'config:field.storage.node.field_payment_status'
         - 'config:field.storage.node.field_upc_user_full_name'
         - 'config:field.storage.node.field_upc_user_mobile_number'

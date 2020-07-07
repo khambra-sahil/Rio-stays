@@ -5,6 +5,7 @@ dependencies:
   module:
     - guest_app_custom
     - system
+    - user
   theme:
     - bartik
 id: roominformation
@@ -24,3 +25,12 @@ visibility:
     pages: '<front>'
     negate: false
     context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+      house_keeping: house_keeping
+      front_office: front_office
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

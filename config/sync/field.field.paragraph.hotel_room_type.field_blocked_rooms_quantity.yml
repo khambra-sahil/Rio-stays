@@ -1,19 +1,21 @@
-uuid: 49116652-a18d-4af7-aedb-88a9c8f9c3e5
+uuid: 7cfa6825-52ea-420d-8292-ee7a007f0d1e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_remaining_room_quantity
+    - field.storage.paragraph.field_blocked_rooms_quantity
     - paragraphs.paragraphs_type.hotel_room_type
-id: paragraph.hotel_room_type.field_remaining_room_quantity
-field_name: field_remaining_room_quantity
+id: paragraph.hotel_room_type.field_blocked_rooms_quantity
+field_name: field_blocked_rooms_quantity
 entity_type: paragraph
 bundle: hotel_room_type
-label: 'Remaining Room Quantity'
+label: 'Blocked Rooms Quantity'
 description: ''
-required: true
+required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 0
 default_value_callback: ''
 settings:
   min: 0

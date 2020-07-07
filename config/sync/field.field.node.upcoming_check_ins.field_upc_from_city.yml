@@ -1,0 +1,19 @@
+uuid: c1efc913-341f-43dd-be18-0e54e0a3a1ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upc_from_city
+    - node.type.upcoming_check_ins
+id: node.upcoming_check_ins.field_upc_from_city
+field_name: field_upc_from_city
+entity_type: node
+bundle: upcoming_check_ins
+label: 'From City'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 6d79099b-f4a8-4f41-8d29-91d4488c0bc5
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_blocked_rooms_quantity
+field_name: field_blocked_rooms_quantity
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 205d0dbf-2cf8-42b5-b021-8609c71f8954
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_booking_status
+    - node.type.upcoming_check_ins
+  module:
+    - options
+id: node.upcoming_check_ins.field_booking_status
+field_name: field_booking_status
+entity_type: node
+bundle: upcoming_check_ins
+label: 'Booking Status'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

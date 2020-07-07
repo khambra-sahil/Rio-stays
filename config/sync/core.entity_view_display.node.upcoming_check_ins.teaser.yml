@@ -6,10 +6,13 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.upcoming_check_ins.body
     - field.field.node.upcoming_check_ins.field_arrival_time
+    - field.field.node.upcoming_check_ins.field_booking_status
     - field.field.node.upcoming_check_ins.field_check_in_from
     - field.field.node.upcoming_check_ins.field_hotel_id
     - field.field.node.upcoming_check_ins.field_payment_status
     - field.field.node.upcoming_check_ins.field_reference
+    - field.field.node.upcoming_check_ins.field_upc_from_city
+    - field.field.node.upcoming_check_ins.field_upc_from_state
     - field.field.node.upcoming_check_ins.field_upc_user_full_name
     - field.field.node.upcoming_check_ins.field_upc_user_mobile_number
     - field.field.node.upcoming_check_ins.field_upc_user_plan_type
@@ -39,10 +42,13 @@ content:
     region: content
 hidden:
   field_arrival_time: true
+  field_booking_status: true
   field_check_in_from: true
   field_hotel_id: true
   field_payment_status: true
   field_reference: true
+  field_upc_from_city: true
+  field_upc_from_state: true
   field_upc_user_full_name: true
   field_upc_user_mobile_number: true
   field_upc_user_plan_type: true

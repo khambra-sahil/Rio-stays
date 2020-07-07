@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.hotel_room_type.field_blocked_rooms_quantity
     - field.field.paragraph.hotel_room_type.field_remaining_room_quantity
     - field.field.paragraph.hotel_room_type.field_room_quantity
     - field.field.paragraph.hotel_room_type.field_room_type
@@ -12,6 +13,13 @@ targetEntityType: paragraph
 bundle: hotel_room_type
 mode: default
 content:
+  field_blocked_rooms_quantity:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_remaining_room_quantity:
     weight: 2
     settings:

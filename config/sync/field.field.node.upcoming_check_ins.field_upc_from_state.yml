@@ -1,0 +1,19 @@
+uuid: 3a01392e-7a9b-4f48-b3b7-100417cc29f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upc_from_state
+    - node.type.upcoming_check_ins
+id: node.upcoming_check_ins.field_upc_from_state
+field_name: field_upc_from_state
+entity_type: node
+bundle: upcoming_check_ins
+label: 'From State'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
