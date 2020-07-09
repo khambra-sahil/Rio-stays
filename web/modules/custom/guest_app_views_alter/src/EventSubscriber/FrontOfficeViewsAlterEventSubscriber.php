@@ -39,11 +39,11 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
     $view = $event->getView();
 
     $hotel_views = ['wifi_details','help_line_number','hotel_number','hotel_activities','hotel_rooms_types'];
-    $requests_views = ['request_housekeeping','requests','report_issue'];
-    $upcoming_checkins_views = ['upcoming_checkins','future_checkins'];
-    $booking = ['confirm_checkins','cancelled_bookings'];
+    $requests_views = ['request_housekeeping','requests','report_issue','housekeeping_export','request_export','report_issue_export'];
+    $upcoming_checkins_views = ['upcoming_checkins','future_checkins','upcoming_checkins_export','future_check_ins_export'];
+    $booking = ['confirm_checkins','cancelled_bookings','confirm_booking_export','cancelled_bookings_export'];
     $user_history = ['checkout_log','user_history'];
-    $hotel_inventory = ['rooms_inventory','service_inventory'];
+    $hotel_inventory = ['rooms_inventory','service_inventory','rooms_inventory_export','quantity_by_servise_export'];
 
     if(!empty($hotel_id) && in_array($view->current_display, $hotel_views)) {
       

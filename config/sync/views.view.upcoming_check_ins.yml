@@ -13,10 +13,14 @@ dependencies:
     - field.storage.node.field_user_checkin_checkout_date
     - node.type.upcoming_check_ins
   module:
+    - csv_serialization
     - node
     - options
+    - rest
+    - serialization
     - smart_date
     - user
+    - views_data_export
 id: upcoming_check_ins
 label: 'Upcoming Check Ins'
 module: views
@@ -885,6 +889,309 @@ display:
         - 'config:field.storage.node.field_upc_user_plan_type'
         - 'config:field.storage.node.field_upc_user_room_type'
         - 'config:field.storage.node.field_user_checkin_checkout_date'
+  cancelled_bookings_export:
+    display_plugin: data_export
+    id: cancelled_bookings_export
+    display_title: 'Cancelled Bookings export'
+    position: 8
+    display_options:
+      display_extenders: {  }
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            upcoming_check_ins: upcoming_check_ins
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_booking_status_value:
+          id: field_booking_status_value
+          table: node__field_booking_status
+          field: field_booking_status_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            3: '3'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+      defaults:
+        filters: false
+        filter_groups: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      title: 'Cancelled Bookings'
+      display_description: ''
+      path: cancelled-bookings-export.csv
+      filename: cancelled-bookings-export.csv
+      automatic_download: false
+      store_in_public_file_directory: null
+      redirect_to_display: none
+      custom_redirect_path: false
+      include_query_params: false
+      displays:
+        cancelled_bookings: cancelled_bookings
+        default: '0'
+        confirm_checkins: '0'
+        future_checkins: '0'
+        upcoming_checkins: '0'
+      style:
+        type: data_export
+        options:
+          formats:
+            csv: csv
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
+        - 'config:field.storage.node.field_payment_status'
+        - 'config:field.storage.node.field_upc_user_full_name'
+        - 'config:field.storage.node.field_upc_user_mobile_number'
+        - 'config:field.storage.node.field_upc_user_plan_type'
+        - 'config:field.storage.node.field_upc_user_room_type'
+        - 'config:field.storage.node.field_user_checkin_checkout_date'
+  confirm_booking_export:
+    display_plugin: data_export
+    id: confirm_booking_export
+    display_title: 'Confirm Booking export'
+    position: 7
+    display_options:
+      display_extenders: {  }
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            upcoming_check_ins: upcoming_check_ins
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_user_checkin_checkout_date_value:
+          id: field_user_checkin_checkout_date_value
+          table: node__field_user_checkin_checkout_date
+          field: field_user_checkin_checkout_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: between
+          value:
+            min: today
+            max: '+1 day'
+            value: ''
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: date
+        field_payment_status_value:
+          id: field_payment_status_value
+          table: node__field_payment_status
+          field: field_payment_status_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            paid: paid
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+      defaults:
+        filters: false
+        filter_groups: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      displays:
+        confirm_checkins: confirm_checkins
+        default: '0'
+        cancelled_bookings: '0'
+        future_checkins: '0'
+        upcoming_checkins: '0'
+      display_description: ''
+      title: 'Confirm Booking export'
+      path: confirm-booking-export.csv
+      filename: confirm-booking-export.csv
+      automatic_download: false
+      store_in_public_file_directory: null
+      redirect_to_display: none
+      custom_redirect_path: false
+      include_query_params: false
+      style:
+        type: data_export
+        options:
+          formats:
+            csv: csv
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
+        - 'config:field.storage.node.field_payment_status'
+        - 'config:field.storage.node.field_upc_user_full_name'
+        - 'config:field.storage.node.field_upc_user_mobile_number'
+        - 'config:field.storage.node.field_upc_user_plan_type'
+        - 'config:field.storage.node.field_upc_user_room_type'
+        - 'config:field.storage.node.field_user_checkin_checkout_date'
   confirm_checkins:
     display_plugin: page
     id: confirm_checkins
@@ -1033,6 +1340,139 @@ display:
         - 'config:field.storage.node.field_upc_user_plan_type'
         - 'config:field.storage.node.field_upc_user_room_type'
         - 'config:field.storage.node.field_user_checkin_checkout_date'
+  future_check_ins_export:
+    display_plugin: data_export
+    id: future_check_ins_export
+    display_title: future-check-ins-export
+    position: 6
+    display_options:
+      display_extenders: {  }
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            upcoming_check_ins: upcoming_check_ins
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_user_checkin_checkout_date_value:
+          id: field_user_checkin_checkout_date_value
+          table: node__field_user_checkin_checkout_date
+          field: field_user_checkin_checkout_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>'
+          value:
+            min: today
+            max: '+1 day'
+            value: '+1 day'
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: date
+      defaults:
+        filters: false
+        filter_groups: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      path: future-check-ins-export.csv
+      filename: future-check-ins-export.csv
+      automatic_download: false
+      store_in_public_file_directory: null
+      redirect_to_display: none
+      custom_redirect_path: false
+      include_query_params: false
+      display_description: ''
+      title: 'future check ins export'
+      displays:
+        future_checkins: future_checkins
+        default: '0'
+        cancelled_bookings: '0'
+        confirm_checkins: '0'
+        upcoming_checkins: '0'
+      style:
+        type: data_export
+        options:
+          formats:
+            csv: csv
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
+        - 'config:field.storage.node.field_payment_status'
+        - 'config:field.storage.node.field_upc_user_full_name'
+        - 'config:field.storage.node.field_upc_user_mobile_number'
+        - 'config:field.storage.node.field_upc_user_plan_type'
+        - 'config:field.storage.node.field_upc_user_room_type'
+        - 'config:field.storage.node.field_user_checkin_checkout_date'
   future_checkins:
     display_plugin: page
     id: future_checkins
@@ -1156,6 +1596,90 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_check_in_from'
+        - 'config:field.storage.node.field_hotel_id'
+        - 'config:field.storage.node.field_payment_status'
+        - 'config:field.storage.node.field_upc_user_full_name'
+        - 'config:field.storage.node.field_upc_user_mobile_number'
+        - 'config:field.storage.node.field_upc_user_plan_type'
+        - 'config:field.storage.node.field_upc_user_room_type'
+        - 'config:field.storage.node.field_user_checkin_checkout_date'
+  upcoming_checkins_export:
+    display_plugin: data_export
+    id: upcoming_checkins_export
+    display_title: 'Upcoming Check Ins export'
+    position: 5
+    display_options:
+      display_extenders: {  }
+      path: upcoming-check-ins-export.csv
+      filename: upcoming-check-ins-export.csv
+      automatic_download: false
+      store_in_public_file_directory: null
+      redirect_to_display: none
+      custom_redirect_path: false
+      include_query_params: false
+      displays:
+        upcoming_checkins: upcoming_checkins
+        default: '0'
+        cancelled_bookings: '0'
+        confirm_checkins: '0'
+        future_checkins: '0'
+      display_description: ''
+      title: 'Upcoming Check Ins Export'
+      defaults:
+        title: false
+      style:
+        type: data_export
+        options:
+          formats:
+            csv: csv
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+      row:
+        type: data_field
+        options:
+          field_options:
+            title:
+              alias: ''
+              raw_output: false
+            field_upc_user_full_name:
+              alias: ''
+              raw_output: false
+            field_upc_user_mobile_number:
+              alias: ''
+              raw_output: false
+            field_user_checkin_checkout_date:
+              alias: ''
+              raw_output: false
+            field_upc_user_room_type:
+              alias: ''
+              raw_output: false
+            field_upc_user_plan_type:
+              alias: ''
+              raw_output: false
+            field_payment_status:
+              alias: ''
+              raw_output: false
+            field_check_in_from:
+              alias: ''
+              raw_output: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:

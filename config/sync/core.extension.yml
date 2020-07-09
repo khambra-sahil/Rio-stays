@@ -3,6 +3,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   automated_cron: 0
+  better_exposed_filters: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -29,6 +30,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  csv_serialization: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -50,6 +52,10 @@ module:
   hook_event_dispatcher: 0
   image: 0
   inline_entity_form: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
+  jquery_ui_touch_punch: 0
   kint: 0
   link: 0
   menu_item_role_access: 0
@@ -62,7 +68,9 @@ module:
   profile: 0
   quickedit: 0
   rdf: 0
+  rest: 0
   search: 0
+  serialization: 0
   shortcut: 0
   smart_date: 0
   smtp: 0
@@ -77,6 +85,7 @@ module:
   tour: 0
   update: 0
   user: 0
+  views_data_export: 0
   views_ui: 0
   menu_link_content: 1
   views: 10
