@@ -44,6 +44,7 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
     $booking = ['confirm_checkins','cancelled_bookings','confirm_booking_export','cancelled_bookings_export'];
     $user_history = ['checkout_log','user_history'];
     $hotel_inventory = ['rooms_inventory','service_inventory','rooms_inventory_export','quantity_by_servise_export'];
+    $event_booking = ['event_booking','event_booking_data_export'];
 
     if(!empty($hotel_id) && in_array($view->current_display, $hotel_views)) {
       
@@ -72,6 +73,10 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
 
     if(!empty($hotel_id) && in_array($view->current_display, $user_history)){
       $query->where[0]['conditions'][0]['value'][':node__field_user_history_hotel_field_user_history_hotel_target_id'] = $hotel_id;
+    }
+
+    if(!empty($hotel_id) && in_array($view->current_display, $event_booking)){
+      $query->where[0]['conditions'][0]['value'][':node__field_booking_query_hotel_field_booking_query_hotel_target_id'] = $hotel_id;
     }
 
   }

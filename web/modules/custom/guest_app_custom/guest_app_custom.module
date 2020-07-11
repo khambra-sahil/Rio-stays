@@ -101,8 +101,8 @@ function hotel_room_available_qty($hotel_id,$room_type){
         if($para_room_type == $room_type){
             $blocked_rooms = $paragraph->get('field_blocked_rooms_quantity')->value;
             $available_rooms = $paragraph->get('field_remaining_room_quantity')->value;
-            $available_room_qty = $available_rooms - $blocked_rooms;
-            $data = array('remaining_qty' => $available_room_qty, 'paragraph' => $paragraph );
+            //$available_room_qty = $available_rooms - $blocked_rooms;
+            $data = array('available_rooms' => $available_rooms,'blocked_rooms'=>$blocked_rooms ,'paragraph' => $paragraph );
             return $data;
         }
     }
@@ -175,10 +175,11 @@ function upcoming_check_ins_validate(&$form, &$form_state){
     //$date2 = new DrupalDateTime($end_date, DATETIME_STORAGE_TIMEZONE);
     //$end_date_value = $date2->format('Y-m-d');
 
-    $date_from = $start_date->getPhpDateTime()->getTimestamp();
-    $date_to = $end_date->getPhpDateTime()->getTimestamp();
+    $date_from = get_date_timestamp($start_date->getPhpDateTime()->getTimestamp());
+    $date_to = get_date_timestamp($end_date->getPhpDateTime()->getTimestamp());
 
-    for ($i=$date_from; $i<=$date_to-86400; $i+=86400) {
+    //loop through date range
+    for ($i=$date_from; $i<$date_to; $i+=86400) {
        $room_status = get_room_by_date_type(date("Y-m-d", $i),$room_type);
 
        if(!$room_status['flag']){
@@ -190,10 +191,11 @@ function upcoming_check_ins_validate(&$form, &$form_state){
        $date_count++;
        $rooms_status_on_selected_date[] = array(date("Y-m-d", $i),$room_status['available_qty']);
     }
-
+    //check if room is available for each selected date
     if($date_available_count == $date_count){
 
-        for ($i=$date_from; $i<=$date_to-86400; $i+=86400) {
+        //add or update entry in json for each date
+        for ($i=$date_from; $i<$date_to; $i+=86400) {
            $room_status = get_room_by_date_type(date("Y-m-d", $i),$room_type);
 
            if($room_status['available_qty'] == NULL){
@@ -208,7 +210,8 @@ function upcoming_check_ins_validate(&$form, &$form_state){
 
            $data = array('room_type'=>$room_type,'check_in_start_date'=>$i,'check_in_end_date'=>$i+86400,'available_qty'=>$available_qty);
 
-           if(!$room_status['file']){
+           //if file is not present then create file
+           if(!$room_status['file']){ 
 
             $file = File::create([
               'filename' => 'Hotel_id_'.$hotel_id.'.json',
@@ -287,17 +290,19 @@ function upcoming_check_ins_validate(&$form, &$form_state){
       $nid = $node->id();
     }
     $node_data = Node::load($nid);
+    //data from node load
     $old_room_type = $node_data->get('field_upc_user_room_type')->target_id;
     $old_start_date = $node_data->get('field_user_checkin_checkout_date')->value;
     $old_end_date = $node_data->get('field_user_checkin_checkout_date')->end_value;
     //Current form values
     $room_type = $form_state->getValue('field_upc_user_room_type')[0][target_id];
-    $date_from = $form_state->getValue('field_user_checkin_checkout_date')[0][value]->getPhpDateTime()->getTimestamp();
-    $date_to = $form_state->getValue('field_user_checkin_checkout_date')[0][end_value]->getPhpDateTime()->getTimestamp();
+    $date_from = get_date_timestamp($form_state->getValue('field_user_checkin_checkout_date')[0][value]->getPhpDateTime()->getTimestamp() );
+    $date_to = get_date_timestamp($form_state->getValue('field_user_checkin_checkout_date')[0][end_value]->getPhpDateTime()->getTimestamp());
 
+    // if any of the field changes
     if($old_room_type != $room_type || $old_start_date != $start_date || $old_end_date != $end_date){
         
-        for ($i=$date_from; $i<=$date_to-86400; $i+=86400) {
+        for ($i=$date_from; $i<$date_to; $i+=86400) {
            $room_status = get_room_by_date_type(date("Y-m-d", $i),$room_type);
 
            if(!$room_status['flag']){
@@ -372,9 +377,69 @@ function get_room_by_date_type($date,$room_type){
  */
 function user_checkin_validate(&$form, &$form_state){
 
-    //kint($form_state->get('field_storage'));
-    //kint($form['#process']);
-    //$form_state->getValue('field_upc_user_room_type')[0]
-    //exit;
+    $user_id = $form_state->getformObject()->getEntity()->id();
+    if($user_id != NULL){
+        $current_user = \Drupal\user\Entity\User::load($user_id);
+        $original_check_in_check_out_status = $current_user->get('field_check_in_check_out')->value;
+    }
+    $check_in_check_out_status = $form_state->getValue('field_check_in_check_out')[0]['value'];
 
+    if( ($check_in_check_out_status != NULL && $original_check_in_check_out_status != $check_in_check_out_status) || ( $user_id == NULL && $check_in_check_out_status != NULL) ){
+
+       $hotel_id = $form_state->getValue('field_hotel')[0]['target_id'];
+       $room_type = $form_state->getValue('field_room_type')[0]['target_id'];
+
+        if($room_type != NULL && $hotel_id != NULL){
+            
+          $hotel_room_data = hotel_room_available_qty($hotel_id,$room_type);
+          $available_room_qty = $hotel_room_data['available_rooms'];
+          $blocked_room_qty = $hotel_room_data['blocked_rooms'];
+          $paragraph = $hotel_room_data['paragraph'];
+
+          $rooms_available = $available_room_qty - $blocked_room_qty;
+
+          if($check_in_check_out_status == 'check_in' && $rooms_available >= 1){
+            $remaining_room_qty = $available_room_qty - 1;
+            $paragraph->set('field_remaining_room_quantity', $remaining_room_qty);
+            $paragraph->save();
+          }
+          else if($original_check_in_check_out_status == 'check_in' && $check_in_check_out_status == 'check_out'){
+            $remaining_room_qty = $available_room_qty + 1;
+            $paragraph->set('field_remaining_room_quantity', $remaining_room_qty);
+            $paragraph->save();
+          }
+          else{
+            $form_state->setErrorByName('field_check_in_check_out', t('Rooms not available or you are performing checkout before check-in.'));
+          }
+        }
+        else{
+           $form_state->setErrorByName('field_hotel', t('Field Hotel and room type are required.'));
+        }
+      }
+}
+
+/**
+ * Get room type if it added in hotel inventory
+ */
+function get_room_type_options(){
+    $room_type_arr['_none'] = '- Select a value -';
+      $hotel_id = get_hotel_id();
+      $node_data = hotel_inventory_data($hotel_id);
+      $para = $node_data->field_hotel_rooms_quantity->getValue();
+      foreach($para as $key => $value){
+          $target_id = $value['target_id'];
+          $paragraph = Paragraph::load($target_id);
+          $room_type = $paragraph->get('field_room_type')->target_id;
+          $term_load = Term::load($room_type);
+          $term_name = $term_load->getName();
+          $room_type_arr[$room_type] = $term_name;
+      }
+    return $room_type_arr;
+}
+
+/**
+ * Get only date time stamp from datetime timestamp
+ */
+function get_date_timestamp($timestamp){
+    return strtotime(date("Y-m-d", $timestamp));
 }

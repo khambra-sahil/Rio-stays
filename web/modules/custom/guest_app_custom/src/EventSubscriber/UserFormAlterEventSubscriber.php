@@ -57,7 +57,7 @@ class UserFormAlterEventSubscriber implements EventSubscriberInterface {
      * User check in validation
      */
     if($current_form_id == 'user_form' || $current_form_id =='user_register_form'){
-      //$form['#validate'][] = 'user_checkin_validate';
+      $form['#validate'][] = 'user_checkin_validate';
     }
 
     $event->setForm($form);

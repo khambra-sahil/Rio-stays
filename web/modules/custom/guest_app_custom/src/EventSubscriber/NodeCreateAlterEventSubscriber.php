@@ -87,55 +87,35 @@ class NodeCreateAlterEventSubscriber implements EventSubscriberInterface {
         $current_user_hotel_id = get_hotel_id(); 
         $entity->field_hotel_id = [$current_user_hotel_id];
       }
-
-      /*$hotel_id = get_hotel_id();
-      $room_type_tid = $entity->get('field_upc_user_room_type')->target_id;
-      $check_in_start_date = $entity->get('field_user_checkin_checkout_date')->value;
-      $check_in_end_date = $entity->get('field_user_checkin_checkout_date')->end_value;
-      $available_qty_data = hotel_room_available_qty($hotel_id,$room_type_tid);
-      //$term_load = Term::load($room_type_tid);
-
-      if(!empty($available_qty_data)){
-        $available_qty = $available_qty_data['remaining_qty'];
+      if($entity->original != NULL) {
+        $original_booking_status = $entity->original->get('field_booking_status')->value;
       }
+      $booking_status = $entity->get('field_booking_status')->value;
 
-      //$rooms = blocked_rooms($hotel_id,$room_type,$check_in_start_date,$check_in_end_date);
+      // revert rooms inventory in json file if upcoming check-in is cancelled
+      if($booking_status == 3 && $original_booking_status != $booking_status){
+        $room_type_tid = $entity->get('field_upc_user_room_type')->target_id;
+        $check_in_start_date = get_date_timestamp($entity->get('field_user_checkin_checkout_date')->value);
+        $check_in_end_date = get_date_timestamp($entity->get('field_user_checkin_checkout_date')->end_value);
 
-      $data = array('nid'=>$entity->id(),'room_type'=>$room_type_tid,'check_in_start_date'=>$check_in_start_date,'check_in_end_date'=>$check_in_end_date,'available_qty'=>$available_qty);
-
-      $url = 'public://upcoming_check_ins/'.'Hotel_id_'.$hotel_id.'.json';
-      $tempArray = [];
-
-      if (file_exists($url)) {
-        $file_data = json_decode(file_get_contents($url) );
-        $flag = false;
-        foreach ($file_data as $key => $value) {
-          if ($value->nid == $entity->id() ) {
-              $flag = true;
-              break;
+        for ($i=$check_in_start_date; $i<$check_in_end_date; $i+=86400) {
+          $url = 'public://upcoming_check_ins/'.'Hotel_id_'.$hotel_id.'.json';
+          $file_data = json_decode(file_get_contents($url) );
+          $flag = false;
+          foreach ($file_data as $key => $value) {
+            if ($value->room_type == $room_type_tid 
+              && ( date("Y-m-d", $i) == date('Y-m-d',$value->check_in_start_date)) 
+              && ( date("Y-m-d", $i+86400) == date('Y-m-d',$value->check_in_end_date)) 
+              ){
+                  $file_data[$key]->available_qty = ($value->available_qty)+1;
+                   $jsonData = json_encode($file_data);
+                  file_put_contents($url, $jsonData);
+                break;
+            }
           }
         }
-        if(!$flag){
-          $tempArray = $file_data;
-          array_push($tempArray, $data);
-          $jsonData = json_encode($tempArray);
-          file_put_contents($url, $jsonData);
-        }
       }
-      else{
-        $file = File::create([
-          'filename' => 'Hotel_id_'.$hotel_id.'.json',
-          'uri' => $url,
-          'status' => 1,
-        ]);
-        //$file->save();
-        $dir = dirname($file->getFileUri());
-        if (!file_exists($dir)) {
-          mkdir($dir, 0770, TRUE);
-        }
-        file_put_contents($file->getFileUri(), json_encode(array($data)) );
-        $file->save();
-      }*/
+  
     }
     /*-----upcoming_check_ins------*/
   }

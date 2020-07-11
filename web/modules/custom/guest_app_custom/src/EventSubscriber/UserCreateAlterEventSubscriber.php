@@ -37,7 +37,6 @@ class UserCreateAlterEventSubscriber implements EventSubscriberInterface {
     if($entity->getEntityTypeId() == 'user'){
       $uid = $entity->id();
       $old_checkout_date_value = 0;
-      $original_check_in_check_out_status = '';
       $current_date = \Drupal::time()->getCurrentTime();
       if(!empty($entity->get('field_check_in_checkout_date'))) {
         $new_check_in_out_date = $entity->get('field_check_in_checkout_date')->getValue();
@@ -49,7 +48,6 @@ class UserCreateAlterEventSubscriber implements EventSubscriberInterface {
       if($entity->original != NULL) {
         $old_checkout_date = $entity->original->get('field_check_in_checkout_date')->getValue();
         $old_checkout_date_value = $old_checkout_date[0]['end_value'];
-        $original_check_in_check_out_status = $entity->original->get('field_check_in_check_out')->value;
       }
       if(!empty($entity->get('field_hotel')->getValue())) {
         $hotel_id = $entity->get('field_hotel')->getValue();
@@ -88,40 +86,7 @@ class UserCreateAlterEventSubscriber implements EventSubscriberInterface {
         $request->enforceIsNew();
         $request->save();
       }
-
-      //$current_user = \Drupal\user\Entity\User::load($uid);
-        $check_in_check_out_status = $entity->get('field_check_in_check_out')->value;
-
-      if($check_in_check_out_status != NULL && $original_check_in_check_out_status != $check_in_check_out_status){
-
-        $hotel_id = $entity->get('field_hotel')->first()->getValue()['target_id'];
-        $room_type = $entity->get('field_room_type')->first()->getValue()['target_id'];
-
-        if($room_type != NULL && $hotel_id != NULL){
-            
-          $hotel_room_data = hotel_room_available_qty($hotel_id,$room_type);
-          $available_room_qty = $hotel_room_data['remaining_qty'];
-          $paragraph = $hotel_room_data['paragraph'];
-
-          if($check_in_check_out_status == 'check_in' && $available_room_qty >= 1){
-            $remaining_room_qty = $available_room_qty - 1;
-            $paragraph->set('field_remaining_room_quantity', $remaining_room_qty);
-            $paragraph->save();
-          }
-          else if($original_check_in_check_out_status == 'check_in' && $check_in_check_out_status == 'check_out'){
-            $remaining_room_qty = $available_room_qty + 1;
-            $paragraph->set('field_remaining_room_quantity', $remaining_room_qty);
-            $paragraph->save();
-          }
-          else{
-            //drupal_set_message('Fields are not unique!', 'error');
-            drupal_set_message('Error you can not perform this action','error');
-          }
-        }
-        else{
-          drupal_set_message('Hotel and Room Type required.','error');
-        }
-      } 
+      
     }
  
 
