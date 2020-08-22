@@ -1,0 +1,19 @@
+uuid: ee82acf2-43fd-477c-85d0-4dc3621b11d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vendor_name
+    - node.type.kitchen_inventory
+id: node.kitchen_inventory.field_vendor_name
+field_name: field_vendor_name
+entity_type: node
+bundle: kitchen_inventory
+label: 'Vendor Name'
+description: 'Enter vendor nme from where this item is purchased.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

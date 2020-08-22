@@ -1,0 +1,21 @@
+uuid: cdb281f3-179b-4add-81bc-d2152a5c163f
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - entity_reference_revisions
+    - paragraphs
+id: commerce_product_variation.field_item_ingredients
+field_name: field_item_ingredients
+entity_type: commerce_product_variation
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

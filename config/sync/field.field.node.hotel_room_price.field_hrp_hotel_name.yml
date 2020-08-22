@@ -1,0 +1,29 @@
+uuid: 201ba945-08c7-4754-81d1-70d8a6d09f66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hrp_hotel_name
+    - node.type.hotel
+    - node.type.hotel_room_price
+id: node.hotel_room_price.field_hrp_hotel_name
+field_name: field_hrp_hotel_name
+entity_type: node
+bundle: hotel_room_price
+label: 'Hotel Name'
+description: 'Select hotel name'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hotel: hotel
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

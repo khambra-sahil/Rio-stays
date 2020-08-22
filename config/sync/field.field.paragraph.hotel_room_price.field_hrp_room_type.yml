@@ -1,0 +1,29 @@
+uuid: 4a6c437a-a2f1-430d-8242-5d5f84a9580c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hrp_room_type
+    - paragraphs.paragraphs_type.hotel_room_price
+    - taxonomy.vocabulary.room_types
+id: paragraph.hotel_room_price.field_hrp_room_type
+field_name: field_hrp_room_type
+entity_type: paragraph
+bundle: hotel_room_price
+label: 'Room Type'
+description: 'Select Room type'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      room_types: room_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

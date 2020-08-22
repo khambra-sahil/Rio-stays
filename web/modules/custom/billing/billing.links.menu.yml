@@ -1,0 +1,17 @@
+
+# Billing menu items definition
+entity.billing_entity.collection:
+  title: 'Billing list'
+  route_name: entity.billing_entity.collection
+  description: 'List Billing entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Billing type menu items definition
+entity.billing_entity_type.collection:
+  title: 'Billing type'
+  route_name: entity.billing_entity_type.collection
+  description: 'List Billing type (bundles)'
+  parent: system.admin_structure
+  weight: 99

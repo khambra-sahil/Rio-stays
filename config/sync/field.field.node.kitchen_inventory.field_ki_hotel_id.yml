@@ -1,0 +1,19 @@
+uuid: 979b3449-c5c2-4757-8d6a-d6d24bd13846
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ki_hotel_id
+    - node.type.kitchen_inventory
+id: node.kitchen_inventory.field_ki_hotel_id
+field_name: field_ki_hotel_id
+entity_type: node
+bundle: kitchen_inventory
+label: 'Hotel ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

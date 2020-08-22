@@ -6,12 +6,14 @@ dependencies:
     - commerce_product.commerce_product_variation_type.menu_item
     - field.field.commerce_product_variation.menu_item.field_category
     - field.field.commerce_product_variation.menu_item.field_hotel
+    - field.field.commerce_product_variation.menu_item.field_item_ingredients
     - field.field.commerce_product_variation.menu_item.field_product_picture
     - field.field.commerce_product_variation.menu_item.field_sub_category
     - image.style.thumbnail
   module:
     - commerce_price
     - image
+    - paragraphs
 id: commerce_product_variation.menu_item.default
 targetEntityType: commerce_product_variation
 bundle: menu_item
@@ -36,6 +38,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_item_ingredients:
+    type: entity_reference_paragraphs
+    weight: 95
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_product_picture:
     weight: 94

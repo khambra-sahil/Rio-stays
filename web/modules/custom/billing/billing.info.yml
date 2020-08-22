@@ -1,0 +1,5 @@
+name: 'Billing'
+type: module
+description: 'This module is used to create bill'
+core: 8.x
+package: 'Custom'

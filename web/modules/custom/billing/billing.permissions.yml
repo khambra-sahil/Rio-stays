@@ -1,0 +1,33 @@
+add billing entities:
+  title: 'Create new Billing entities'
+
+administer billing entities:
+  title: 'Administer Billing entities'
+  description: 'Allow to access the administration form to configure Billing entities.'
+  restrict access: true
+
+delete billing entities:
+  title: 'Delete Billing entities'
+
+edit billing entities:
+  title: 'Edit Billing entities'
+
+view published billing entities:
+  title: 'View published Billing entities'
+
+view unpublished billing entities:
+  title: 'View unpublished Billing entities'
+
+view all billing revisions:
+  title: 'View all Billing revisions'
+
+revert all billing revisions:
+  title: 'Revert all Billing revisions'
+  description: 'Role requires permission <em>view Billing revisions</em> and <em>edit rights</em> for billing entities in question or <em>administer billing entities</em>.'
+
+delete all billing revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Billing revisions</em> and <em>delete rights</em> for billing entities in question or <em>administer billing entities</em>.'
+
+permission_callbacks:
+  - \Drupal\billing\BillingEntityPermissions::generatePermissions

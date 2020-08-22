@@ -1,0 +1,48 @@
+uuid: 396d78d1-93df-49f2-9f22-5b71cb36838f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hotel_room_price.body
+    - field.field.node.hotel_room_price.field_hotel_room_price
+    - field.field.node.hotel_room_price.field_hrp_hotel_name
+    - node.type.hotel_room_price
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.hotel_room_price.default
+targetEntityType: node
+bundle: hotel_room_price
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hotel_room_price:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_hrp_hotel_name:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

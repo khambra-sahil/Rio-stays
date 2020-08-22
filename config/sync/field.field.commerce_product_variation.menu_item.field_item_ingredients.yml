@@ -1,0 +1,49 @@
+uuid: f27b9cd0-527d-4dc4-a9db-e8b14802d4a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.menu_item
+    - field.storage.commerce_product_variation.field_item_ingredients
+    - paragraphs.paragraphs_type.ingredients
+  module:
+    - entity_reference_revisions
+id: commerce_product_variation.menu_item.field_item_ingredients
+field_name: field_item_ingredients
+entity_type: commerce_product_variation
+bundle: menu_item
+label: 'Item ingredients'
+description: 'Select ingredients used to make this item'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ingredients: ingredients
+    target_bundles_drag_drop:
+      help_line_numbers:
+        weight: 8
+        enabled: false
+      hotel_phone_numbers:
+        weight: 9
+        enabled: false
+      hotel_room_price:
+        weight: 10
+        enabled: false
+      hotel_room_type:
+        weight: 11
+        enabled: false
+      ingredients:
+        enabled: true
+        weight: 12
+      quantity_by_service:
+        weight: 13
+        enabled: false
+      wifi_information:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

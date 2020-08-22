@@ -1,0 +1,25 @@
+uuid: 833c8921-85d0-4c44-8dd5-22a28d05829d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_item_name
+    - paragraphs.paragraphs_type.ingredients
+id: paragraph.ingredients.field_item_name
+field_name: field_item_name
+entity_type: paragraph
+bundle: ingredients
+label: 'Item Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: kitchen_inventory_item_list
+      display_name: entity_reference_kitchen_item
+      arguments: {  }
+field_type: entity_reference

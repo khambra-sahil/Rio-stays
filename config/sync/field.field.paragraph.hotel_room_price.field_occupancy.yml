@@ -1,0 +1,25 @@
+uuid: af4cda3e-d685-41a3-9638-62634057bbaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_occupancy
+    - paragraphs.paragraphs_type.hotel_room_price
+id: paragraph.hotel_room_price.field_occupancy
+field_name: field_occupancy
+entity_type: paragraph
+bundle: hotel_room_price
+label: Occupancy
+description: 'Enter number of person'
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: 20
+  prefix: ''
+  suffix: ''
+field_type: integer

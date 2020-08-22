@@ -1,0 +1,34 @@
+uuid: fee15ffd-20eb-4ac4-bfe0-f34bd1ccd910
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hotel_room_price.body
+    - field.field.node.hotel_room_price.field_hotel_room_price
+    - field.field.node.hotel_room_price.field_hrp_hotel_name
+    - node.type.hotel_room_price
+  module:
+    - text
+    - user
+id: node.hotel_room_price.teaser
+targetEntityType: node
+bundle: hotel_room_price
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_hotel_room_price: true
+  field_hrp_hotel_name: true

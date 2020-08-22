@@ -118,6 +118,18 @@ class NodeCreateAlterEventSubscriber implements EventSubscriberInterface {
   
     }
     /*-----upcoming_check_ins------*/
+
+    if($entity->bundle() == 'kitchen_inventory'){
+      $hotel_id = $entity->get('field_ki_hotel_id')->value;
+      if($hotel_id == NULL){
+        $current_user_hotel_id = get_hotel_id(); 
+        $entity->field_ki_hotel_id = [$current_user_hotel_id];
+      }
+
+      //Store data in custom table
+
+    }
+    
   }
 
   /**

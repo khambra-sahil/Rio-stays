@@ -1,0 +1,38 @@
+uuid: 0671c59c-0aa4-4c47-8111-a989ac12e57d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.kitchen_inventory.body
+    - field.field.node.kitchen_inventory.field_item_quantity
+    - field.field.node.kitchen_inventory.field_item_unit
+    - field.field.node.kitchen_inventory.field_ki_hotel_id
+    - field.field.node.kitchen_inventory.field_vendor_name
+    - node.type.kitchen_inventory
+  module:
+    - text
+    - user
+id: node.kitchen_inventory.teaser
+targetEntityType: node
+bundle: kitchen_inventory
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_item_quantity: true
+  field_item_unit: true
+  field_ki_hotel_id: true
+  field_vendor_name: true

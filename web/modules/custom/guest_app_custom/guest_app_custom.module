@@ -11,6 +11,13 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\file\Entity\File;
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Cell\DataType;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
+use PhpOffice\PhpSpreadsheet\Style\Border;
+
 /*function hotel_inventory_getData($form_state){
 
 	$current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
@@ -442,4 +449,68 @@ function get_room_type_options(){
  */
 function get_date_timestamp($timestamp){
     return strtotime(date("Y-m-d", $timestamp));
+}
+
+/**
+ * Get Term id by name for room type
+ */
+function getTidByName($term_name){
+  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+      ->loadByProperties(['name' => $term_name,'vid' => 'room_types']);
+  $term = reset($term);
+  return !empty($term) ? $term->id() : 0;
+}
+
+/**
+ * Get Term id by name for stay plan
+ */
+function getTidByNameSp($term_name){
+  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+      ->loadByProperties(['name' => $term_name,'vid' => 'stay_plan']);
+  $term = reset($term);
+  return !empty($term) ? $term->id() : 0;
+}
+
+/**
+ * Get Term id by service name
+ */
+function getTidByServiceName($term_name){
+  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+      ->loadByProperties(['name' => $term_name,'vid' => 'prime_services']);
+  $term = reset($term);
+  return !empty($term) ? $term->id() : 0;
+}
+
+/**
+ * Get CSV file row data 
+ */
+function csvFileRowData($fileObj){
+  $file = \Drupal::entityTypeManager()->getStorage('file')->load($fileObj);    
+  $full_path = $file->get('uri')->value;
+  $file_name = basename($full_path);
+  $inputFileName = \Drupal::service('file_system')->realpath('public://data_upload/csv_files/'.$file_name);
+  $spreadsheet = IOFactory::load($inputFileName);
+  $sheetData = $spreadsheet->getActiveSheet();
+  $rows = array();
+  foreach ($sheetData->getRowIterator() as $row) {
+    $cellIterator = $row->getCellIterator();
+    $cellIterator->setIterateOnlyExistingCells(FALSE); 
+    $cells = [];
+    foreach ($cellIterator as $cell) {
+      $cells[] = $cell->getValue();   
+    }
+    $rows[] = $cells;
+  }
+  return $rows;
+}
+
+/**
+ * Get Node id by its title
+ */
+function getNidByTitle($title){
+  $nids = \Drupal::entityQuery('node')
+  ->condition('title', $title)
+  ->sort('nid', 'DESC')
+  ->execute();
+  return $Node_id = reset($nids);//fetch first record in case of multiple
 }

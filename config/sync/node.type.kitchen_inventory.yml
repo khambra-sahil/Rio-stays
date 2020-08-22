@@ -1,0 +1,17 @@
+uuid: c77aa9a0-476e-4de5-ad37-85b62f767c0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Kitchen Inventory'
+type: kitchen_inventory
+description: 'To manage items in kitchen'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -79,5 +79,9 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
       $query->where[0]['conditions'][0]['value'][':node__field_booking_query_hotel_field_booking_query_hotel_target_id'] = $hotel_id;
     }
 
+    if(!empty($hotel_id) && $view->current_display =='entity_reference_kitchen_item'){
+      $query->where[0]['conditions'][0]['value'] = $hotel_id;
+    }
+
   }
 }

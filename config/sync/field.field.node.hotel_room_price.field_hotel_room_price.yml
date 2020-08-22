@@ -1,0 +1,46 @@
+uuid: 8bcd7258-eb3a-458d-8622-0201d26651ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hotel_room_price
+    - node.type.hotel_room_price
+    - paragraphs.paragraphs_type.hotel_room_price
+  module:
+    - entity_reference_revisions
+id: node.hotel_room_price.field_hotel_room_price
+field_name: field_hotel_room_price
+entity_type: node
+bundle: hotel_room_price
+label: 'Hotel Room Price'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hotel_room_price: hotel_room_price
+    target_bundles_drag_drop:
+      help_line_numbers:
+        weight: 7
+        enabled: false
+      hotel_phone_numbers:
+        weight: 8
+        enabled: false
+      hotel_room_price:
+        enabled: true
+        weight: 9
+      hotel_room_type:
+        weight: 10
+        enabled: false
+      quantity_by_service:
+        weight: 11
+        enabled: false
+      wifi_information:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

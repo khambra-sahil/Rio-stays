@@ -1,0 +1,45 @@
+uuid: 3ea0a315-e03a-4326-b625-91c05049f83d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hotel_room_price.field_hrp_room_type
+    - field.field.paragraph.hotel_room_price.field_hrp_stay_plan
+    - field.field.paragraph.hotel_room_price.field_occupancy
+    - field.field.paragraph.hotel_room_price.field_price
+    - paragraphs.paragraphs_type.hotel_room_price
+id: paragraph.hotel_room_price.default
+targetEntityType: paragraph
+bundle: hotel_room_price
+mode: default
+content:
+  field_hrp_room_type:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hrp_stay_plan:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_occupancy:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_price:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,21 @@
+uuid: 0aea1821-aa31-4176-8217-d17dcab21bfe
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_item_quantity
+field_name: field_item_quantity
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: f188995e-e801-4c98-b3ea-ee07f8dda224
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_item_unit
+    - node.type.kitchen_inventory
+  module:
+    - options
+id: node.kitchen_inventory.field_item_unit
+field_name: field_item_unit
+entity_type: node
+bundle: kitchen_inventory
+label: 'Item Unit'
+description: 'Select Unit of item'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

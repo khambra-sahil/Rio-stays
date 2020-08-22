@@ -1,0 +1,22 @@
+# Billing routing definition
+
+entity.billing_entity.canonical:
+  route_name: entity.billing_entity.canonical
+  base_route: entity.billing_entity.canonical
+  title: 'View'
+
+entity.billing_entity.edit_form:
+  route_name: entity.billing_entity.edit_form
+  base_route: entity.billing_entity.canonical
+  title: 'Edit'
+
+entity.billing_entity.version_history:
+  route_name: entity.billing_entity.version_history
+  base_route: entity.billing_entity.canonical
+  title: 'Revisions'
+
+entity.billing_entity.delete_form:
+  route_name:  entity.billing_entity.delete_form
+  base_route:  entity.billing_entity.canonical
+  title: Delete
+  weight: 10

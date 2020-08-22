@@ -21,3 +21,19 @@ issue_service_request.form:
     _form: '\Drupal\guest_app_custom\Form\IssueRequestForm'
   requirements:
     _permission: 'access content'
+
+import_hotel_room_price.form:
+  path: '/admin/structure/import-hotel-room-price'
+  defaults:
+    _title: 'Import Hotel Room Price'
+    _form: '\Drupal\guest_app_custom\Form\ImportHotelRoomPriceForm'
+  requirements:
+    _permission: 'Import form'
+
+import_hotel_inventory.form:
+  path: '/admin/structure/import-hotel-inventory'
+  defaults:
+    _title: 'Import Hotel Inventory'
+    _form: '\Drupal\guest_app_custom\Form\ImportHotelInventoryForm'
+  requirements:
+    _permission: 'Import form'

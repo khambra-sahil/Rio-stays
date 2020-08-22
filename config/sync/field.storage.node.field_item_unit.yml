@@ -1,0 +1,36 @@
+uuid: f83042e8-c766-493c-85cf-29fd43321099
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_item_unit
+field_name: field_item_unit
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: kg
+      label: KG
+    -
+      value: grams
+      label: Grams
+    -
+      value: litre
+      label: Litre
+    -
+      value: unit
+      label: Unit
+    -
+      value: ml
+      label: ML
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

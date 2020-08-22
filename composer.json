@@ -32,6 +32,8 @@
         "drupal/core": "^8.8.0",
         "drupal/core-composer-scaffold": "^8.8.0",
         "drupal/devel_php": "^1.1",
+        "drupal/feeds": "^3.0",
+        "drupal/feeds_para_mapper": "1.x-dev",
         "drupal/geofield": "^1.13",
         "drupal/geolocation": "^3.0",
         "drupal/hook_event_dispatcher": "^1.29",
@@ -49,6 +51,7 @@
         "drupal/views_infinite_scroll": "^1.7",
         "drupal/workflow": "^1.4",
         "drush/drush": "^9.7.1 | ^10.0.0",
+        "phpoffice/phpspreadsheet": "^1.14",
         "vlucas/phpdotenv": "^4.0",
         "webflo/drupal-finder": "^1.0.0",
         "zaporylie/composer-drupal-optimizations": "^1.0"

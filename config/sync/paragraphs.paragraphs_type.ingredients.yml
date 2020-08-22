@@ -1,0 +1,10 @@
+uuid: 4dcde5c1-4c51-4270-84cf-ec288e733d83
+langcode: en
+status: true
+dependencies: {  }
+id: ingredients
+label: Ingredients
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.hotel_room_type.field_blocked_rooms_quantity
+    - field.field.paragraph.hotel_room_type.field_maximum_occupancy
     - field.field.paragraph.hotel_room_type.field_remaining_room_quantity
     - field.field.paragraph.hotel_room_type.field_room_quantity
     - field.field.paragraph.hotel_room_type.field_room_type
@@ -15,6 +16,13 @@ mode: default
 content:
   field_blocked_rooms_quantity:
     weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_maximum_occupancy:
+    weight: 4
     settings:
       placeholder: ''
     third_party_settings: {  }

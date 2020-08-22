@@ -1,0 +1,10 @@
+uuid: c9b25df6-cf7e-43d7-a8fb-ddf2af75c1a1
+langcode: en
+status: true
+dependencies: {  }
+id: hotel_room_price
+label: 'Hotel Room Price'
+icon_uuid: null
+icon_default: null
+description: 'Define Room price by room type'
+behavior_plugins: {  }

@@ -1,0 +1,17 @@
+uuid: 3693bec8-a98d-4257-9756-d4ff9e386741
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Hotel Room Price'
+type: hotel_room_price
+description: 'Define hotel Room price by room type.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
