@@ -1,0 +1,6 @@
+kitchen_inventory_log:
+  table_name: kitchen_inventory_log
+  table_database: default
+  description: 'To show update logs of kitchen inventory'
+  column_relations: 'a:0:{}'
+  created_by: '1'

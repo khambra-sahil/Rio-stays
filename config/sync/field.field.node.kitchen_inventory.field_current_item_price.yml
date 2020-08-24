@@ -1,0 +1,19 @@
+uuid: 7d864a22-ab4e-48bb-9571-2c4777e147fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_current_item_price
+    - node.type.kitchen_inventory
+id: node.kitchen_inventory.field_current_item_price
+field_name: field_current_item_price
+entity_type: node
+bundle: kitchen_inventory
+label: 'Current Item Price'
+description: "Enter the price of the item based on the current market, \r\non the basis of per KG, per Litre or Per Unit"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

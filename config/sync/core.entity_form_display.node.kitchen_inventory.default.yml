@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.kitchen_inventory.body
+    - field.field.node.kitchen_inventory.field_current_item_price
     - field.field.node.kitchen_inventory.field_item_quantity
     - field.field.node.kitchen_inventory.field_item_unit
     - field.field.node.kitchen_inventory.field_ki_hotel_id
@@ -33,6 +34,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_current_item_price:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_item_quantity:
     weight: 8
     settings:
