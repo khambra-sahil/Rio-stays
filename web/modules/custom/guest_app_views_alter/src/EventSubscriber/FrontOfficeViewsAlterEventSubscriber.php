@@ -46,6 +46,8 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
     $hotel_inventory = ['rooms_inventory','service_inventory','rooms_inventory_export','quantity_by_servise_export'];
     $event_booking = ['event_booking','event_booking_data_export'];
 
+    //$kitchen_inventory = ['kitchen_inventory_log','entity_reference_kitchen_item'];
+
     if(!empty($hotel_id) && in_array($view->current_display, $hotel_views)) {
       
       $query->where[0]['conditions'][0]['value'][':node_field_data_nid'] = $hotel_id;
@@ -81,6 +83,10 @@ class FrontOfficeViewsAlterEventSubscriber implements EventSubscriberInterface {
 
     if(!empty($hotel_id) && $view->current_display =='entity_reference_kitchen_item'){
       $query->where[0]['conditions'][0]['value'] = $hotel_id;
+    }
+
+    if(!empty($hotel_id) && $view->current_display =='kitchen_inventory_log'){
+      $query->where[0]['conditions'][0]['value'][':kitchen_inventory_log_hotel_id'] = $hotel_id;
     }
 
   }

@@ -136,52 +136,53 @@ class NodeCreateAlterEventSubscriber implements EventSubscriberInterface {
         $entity->field_ki_hotel_id = [$current_user_hotel_id];
       }
 
-      //Store data in custom table
+      $current_path = \Drupal::service('path.current')->getPath();
 
-      if($entity->original != NULL) {
-        $item_quantity_og = $entity->original->get('field_item_quantity')->value;
-        $item_unit_og = $entity->original->get('field_item_unit')->value;
-        $vendor_name_og = $entity->original->get('field_vendor_name')->value;
-        $item_price_og = $entity->original->get('field_current_item_price')->value;
-      }
+      if (strpos($current_path,'admin/commerce') == false) {
+        
+        //Store data in custom table
 
-      $node_id = $entity->id();
-      $hotel_id = $entity->get('field_ki_hotel_id')->value;
-      $item_name = $entity->get('title')->value;
-      $item_quantity = $entity->get('field_item_quantity')->value;
-      $item_unit = $entity->get('field_item_unit')->value;
-      $vendor_name = $entity->get('field_vendor_name')->value;
-      $item_price = $entity->get('field_current_item_price')->value;
+        if($entity->original != NULL) {
+          $item_quantity_og = $entity->original->get('field_item_quantity')->value;
+          $item_unit_og = $entity->original->get('field_item_unit')->value;
+          $vendor_name_og = $entity->original->get('field_vendor_name')->value;
+          $item_price_og = $entity->original->get('field_current_item_price')->value;
+        }
 
-      // calculate price from newly added items
-      if($entity->original == NULL){
-          if($item_unit =='grams' || $item_unit =='ml'){
-              $price_for_added_item = ($item_quantity/1000)*$item_price;
-          }
-          else{
-            $price_for_added_item = $item_quantity*$item_price;
-          }
+        $node_id = $entity->id();
+        $hotel_id = $entity->get('field_ki_hotel_id')->value;
+        $item_name = $entity->get('title')->value;
+        $item_quantity = $entity->get('field_item_quantity')->value;
+        $item_unit = $entity->get('field_item_unit')->value;
+        $vendor_name = $entity->get('field_vendor_name')->value;
+        $item_price = $entity->get('field_current_item_price')->value;
 
-          $new_added_item_qty = $item_quantity;
-          $new_added_item_unit = $item_unit;
-      }
-
-      // if anything change in inventory then update database
-      if( ($item_quantity_og != $item_quantity) || ($item_unit_og != $item_unit) || ($vendor_name_og != $vendor_name) ||  ($item_price_og != $item_price) ){
-
-        // calculate price from newly added items for existing item
-        if($item_unit == $item_unit_og ){
-          $new_quantity = $item_quantity - $item_quantity_og;
+        // calculate price from newly added items
+        if($entity->original == NULL){
             if($item_unit =='grams' || $item_unit =='ml'){
-              $price_for_added_item = ($new_quantity/1000)*$item_price;
+                $price_for_added_item = ($item_quantity/1000)*$item_price;
             }
             else{
-              $price_for_added_item = $new_quantity*$item_price;
+              $price_for_added_item = $item_quantity*$item_price;
             }
-            $new_added_item_qty = $new_quantity;
+            $new_added_item_qty = $item_quantity;
             $new_added_item_unit = $item_unit;
-          }
+        }
 
+        // if anything change in inventory then update database
+        if( ($item_quantity_og != $item_quantity) || ($item_unit_og != $item_unit) || ($vendor_name_og != $vendor_name) ||  ($item_price_og != $item_price) ){
+          // calculate price from newly added items for existing item
+          if($item_unit == $item_unit_og ){
+            $new_quantity = $item_quantity - $item_quantity_og;
+              if($item_unit =='grams' || $item_unit =='ml'){
+                $price_for_added_item = ($new_quantity/1000)*$item_price;
+              }
+              else{
+                $price_for_added_item = $new_quantity*$item_price;
+              }
+              $new_added_item_qty = $new_quantity;
+              $new_added_item_unit = $item_unit;
+          }
           if( ($item_unit_og == 'grams' && $item_unit == 'kg') || ($item_unit_og == 'ml' && $item_unit == 'litre') ){
             $item_quantity_og = $item_quantity_og / 1000;
             $new_quantity = $item_quantity - $item_quantity_og;
@@ -191,12 +192,13 @@ class NodeCreateAlterEventSubscriber implements EventSubscriberInterface {
             $new_added_item_unit = $item_unit;
           }
         }
-
         $db = \Drupal::database()->insert('kitchen_inventory_log')
               ->fields(['node_id','hotel_id','item_name','old_quantity','old_unit','old_vendor','old_item_price','new_quantity','new_unit','new_vendor','new_item_price','new_added_item_qty','new_added_item_unit','price_for_added_item'])
               ->values(array($node_id, $hotel_id, $item_name, $item_quantity_og, $item_unit_og, $vendor_name_og, $item_price_og, $item_quantity, $item_unit, $vendor_name, $item_price, $new_added_item_qty, $new_added_item_unit, $price_for_added_item))
               ->execute();
       }
+      
+    }
 
   }
     
