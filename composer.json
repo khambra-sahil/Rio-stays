@@ -41,6 +41,7 @@
         "drupal/mobile_number": "^1.0@alpha",
         "drupal/otp_login": "^1.2",
         "drupal/paragraphs": "^1.11",
+        "drupal/pdf_using_mpdf": "^2.1",
         "drupal/quicktabs": "^3.0@alpha",
         "drupal/rate": "^1.0@alpha",
         "drupal/smart_date": "^2.5",
